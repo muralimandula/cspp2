@@ -8,15 +8,15 @@ import java.util.Scanner;
 */
 public class Solution {
     /**
-    *dummy
+    *dummy.
     */
-    private Solution(){        
+    private Solution() {
     }
     /**
     *Do not modify this main function.
     @param args Format need
     */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
         int b = scan.nextInt();
@@ -34,6 +34,6 @@ public class Solution {
                                                 final int c) {
         int denom = 2 * a;
         double root1 = Math.sqrt(b * b - (4 * a * c));       
-        System.out.print(( - b + root1) / denom + " " +( - b - root1) / denom);
+        System.out.print((- b + root1) / denom + " " + (- b - root1) / denom);
     }
 }
