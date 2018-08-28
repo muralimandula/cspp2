@@ -20,7 +20,7 @@ public final class Solution {
     @param args Format need
     */
 	public static void main(String[] args) {
-		Scanner s=new Scanner(System.in);      
+		Scanner s = new Scanner(System.in);      
         int base = s.nextInt();
         int exponent = s.nextInt();
         int result = power(base, exponent);
@@ -28,13 +28,16 @@ public final class Solution {
 	}
 	/**
 	*Need to write the power function and print the output.
-	*
+	@param a a
+	@param b b
+	@return value of a to power b.
 	*/
 	public static int power(final int a, final int b) {
-		if (b == 0){
+		if (b == 0) {
 			return 1;
 		} else {
 			return a * power(a, b - 1);
 		}
 	}
 }
+
