@@ -21,9 +21,9 @@ public final class Solution {
     */
     public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
-        int base = s.nextInt();
-        int exponent = s.nextInt();
-        int result = power(base, exponent);
+        long base = s.nextLong();
+        long exponent = s.nextLong();
+        long result = power(base, exponent);
         System.out.println(result);
     }
     /**
@@ -32,11 +32,13 @@ public final class Solution {
     @param b b
     @return value of a to power b.
     */
-    public static int power(final int a, final int b) {
-        if (b == 0) {
-            return 1;
+    public static long power(final long a, final long b) {
+        final long zero = 0;
+        final long one = 1;
+        if (b == zero) {
+            return one;
         } else {
-            return a * power(a, b - 1);
+            return a * power(a, (b - one));
         }
     }
 }
