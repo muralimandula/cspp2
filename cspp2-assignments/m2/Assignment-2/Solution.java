@@ -33,7 +33,8 @@ public final class Solution {
                                                 final int b,
                                                 final int c) {
         int denom = 2 * a;
-        double root1 = Math.sqrt(b * b - (4 * a * c));
+        final int four = 4;
+        double root1 = Math.sqrt(b * b - (four * a * c));
         System.out.print((-b + root1) / denom + " " + (-b - root1) / denom);
     }
 }
