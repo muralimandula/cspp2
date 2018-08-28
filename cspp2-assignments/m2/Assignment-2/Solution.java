@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
 *Main class - Solution Class.
 */
-public class Solution {
+public final class Solution {
     /**
     *dummy.
     */
