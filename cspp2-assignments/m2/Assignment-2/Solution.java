@@ -38,3 +38,4 @@ public final class Solution {
         System.out.print((-b + root1) / denom + " " + (-b - root1) / denom);
     }
 }
+
