@@ -31,7 +31,7 @@ public final class Solution {
     for (int i = 0; i < n; i++) {
         String s = readInput.nextLine();
         String res = binaryToDecimal(s); //Write binaryToDecimal function
-        System.out.println(res); 
+        System.out.println(res);
       }
     }
 
