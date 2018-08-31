@@ -17,7 +17,7 @@ public class Solution
   {
     Scanner readInput = new Scanner(System.in);
     int n = readInput.nextInt();
-    for(int i=0; i<=n; i++) {
+    for(int i=0; i<n; i++) {
         String s = readInput.nextLine();
         String res = binaryToDecimal(s);//Write binaryToDecimal function
         System.out.println(res);        
