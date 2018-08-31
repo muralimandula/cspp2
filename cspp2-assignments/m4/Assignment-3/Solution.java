@@ -21,7 +21,7 @@ public final class Solution {
   /**
    * { main method }.
    *
-   * @param      args  The arguments
+   * @param      args  The arguments.
    */
 
   public static void main(final String[] args) {
@@ -31,19 +31,19 @@ public final class Solution {
     for (int i = 0; i < n; i++) {
         String s = readInput.nextLine();
         String res = binaryToDecimal(s); //Write binaryToDecimal function
-        System.out.println(res);        
+        System.out.println(res); 
       }
     }
 
   /**
-   * { function_description }
+   * { function_description }.
    *
-   * @param      binary  The binary
+   * @param      binary  The binary.
    *
-   * @return     { description_of_the_return_value }
+   * @return     { description_of_the_return_value }.
    */
 
-  public static String binaryToDecimal(String binary) {
+  public static String binaryToDecimal(final String binary) {
     int length = binary.length();
     double sum = 0;
     for (int i = 0; i < length; i++) {
