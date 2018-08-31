@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -21,12 +21,11 @@ public class Solution {
      * Main Method.
      * @param      args  The arguments.
      */
-    public static void main(String[] args)
-    {
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
-        String reverse = reverseString(s);    
-        System.out.println(reverse); 
+        String reverse = reverseString(s);
+        System.out.println(reverse);
     }
 
     /**
@@ -35,7 +34,7 @@ public class Solution {
      * @return     { description_of_the_return_value }.
      */
 
-    public static String reverseString(String s) {
+    public static String reverseString(final String s) {
         String str = "";
         int length = s.length();
         for (int i = 0; i < length; i++) {
