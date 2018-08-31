@@ -1,10 +1,21 @@
-
-// Given an String, Write a java method that returns the decimal value for the given binary string.
-
-
+/**
+ *20186065.
+ *Binary to decimal.
+ */
 import java.util.Scanner;
-public class Solution
-{/*
+
+/**
+ * Main Class.
+ */
+public final class Solution {
+  
+  /**
+   * Constructs the object.
+   */
+  private Solution() {
+    //unused
+  }
+  /*
   Do not modify this main function.
   */
   /**
@@ -13,11 +24,11 @@ public class Solution
    * @param      args  The arguments
    */
 
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) {
     Scanner readInput = new Scanner(System.in);
+    // int n = readInput.nextInt();
     int n = Integer.parseInt(readInput.nextLine());
-    for(int i=0; i<n; i++) {
+    for(int i = 0; i < n; i++) {
         String s = readInput.nextLine();
         String res = binaryToDecimal(s);//Write binaryToDecimal function
         System.out.println(res);        
@@ -32,18 +43,16 @@ public class Solution
    * @return     { description_of_the_return_value }
    */
 
-  public static String binaryToDecimal(String binary)
-  {
+  public static String binaryToDecimal(String binary) {
     int length = binary.length();
     double sum = 0;
-    for (int i = 0; i < length ; i++ ) {
+    for (int i = 0; i < length ; i++) {
       if (binary.charAt(i) == '1') {
-        sum += Math.pow(2, ((length-i)-1));
+        sum += Math.pow(2, ((length - i) - 1));
       }      
     }
     
     String result = Double.toString(sum);
-    return (result.substring(0,(result.length()-2)));
-   
+    return (result.substring(0, (result.length() - 2)));
   }
 }
