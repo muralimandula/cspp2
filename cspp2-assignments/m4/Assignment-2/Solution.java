@@ -53,8 +53,8 @@ public final class Solution {
         matrix2[i][j] = readInput.nextInt();
       }
     }
-    if (r1 == r2 && c1 == c2) { 
-    int[][] matAdd = new int[r1][c1];  
+    if (r1 == r2 && c1 == c2) {
+    int[][] matAdd = new int[r1][c1];
 
     for (int i = 0; i < r1; i++) {
       String o = "";
