@@ -15,29 +15,35 @@ public class Solution
 
   public static void main(String[] args)
   {
-    Scanner sc=new Scanner(System.in);
-    int n= sc.nextInt();
-    for(int i=0;i<=n;i++) {
-        String s=sc.nextLine();
-        double res=binaryToDecimal(s);//Write binaryToDecimal function
+    Scanner readInput = new Scanner(System.in);
+    int n = readInput.nextInt();
+    for(int i=0; i<=n; i++) {
+        String s = readInput.nextLine();
+        String res = binaryToDecimal(s);//Write binaryToDecimal function
         System.out.println(res);        
-
       }
     }
 
-  public static double binaryToDecimal(String binary)
+  /**
+   * { function_description }
+   *
+   * @param      binary  The binary
+   *
+   * @return     { description_of_the_return_value }
+   */
+
+  public static String binaryToDecimal(String binary)
   {
+    int length = binary.length();
     double sum = 0;
-    int[] bin = new int[binary.length()];
-
-    for (int i = 0; i < binary.length() ; i++) {
-      bin[i] = binary.charAt(i) - '0';
-      
+    for (int i = 0; i < length ; i++ ) {
+      if (binary.charAt(i) == '1') {
+        sum += Math.pow(2, ((length-i)-1));
+      }      
     }
-
-    for (int i=(binary.length()-1) ; i>=0 ; i--) {
-      sum = sum + (bin[i]*(Math.pow(2, i)));
-    }
-    return sum;
+    
+    String result = Double.toString(sum);
+    return (result.substring(0,(result.length()-2)));
+   
   }
 }
