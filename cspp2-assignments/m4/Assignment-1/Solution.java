@@ -1,5 +1,5 @@
 /**
-*20186065. 
+*20186065.
 * To find the largest number in a given array.
 */
 
@@ -43,4 +43,5 @@ public final class Solution {
     System.out.println(max);
   }
 }
+
 
