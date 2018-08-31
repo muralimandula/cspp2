@@ -37,7 +37,7 @@ public final class Solution {
     System.out.println(gcd);
     }
   /**
-   * Need to write the gcd function and print the output.   
+   * Need to write the gcd function and print the output.
    * The GCD of 2 numbers.
    *
    @param      x     First Number
@@ -57,4 +57,5 @@ public final class Solution {
   }
 
 }
+
 
