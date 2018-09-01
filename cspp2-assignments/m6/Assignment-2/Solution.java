@@ -23,36 +23,30 @@ final class Solution {
      *
      * @return     Matrix of the rounded elements
      */
-    static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
+    static int[][] roundHundred(final int[][] a,
+        final int rows, final int columns) {
 
     // write ypur code here
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-
-                if (a[i][j] < 51) {
-                    a[i][j] = 0;
-                } else {
                     a[i][j] = rounding(a[i][j]);
-                   }
-            }
+                }
         }
         return a;
     }
 
 
-
+    /**
+     * rounding the value.
+     * @param      n     { parameter_description }.
+     * @return     { description_of_the_return_value }.
+     */
     public static int rounding(final int n) {
 
         double a = Math.floor(n / 100);
-        // Double d = new Double(1.23);
-        // int i = d.intValue();
-        // double myDb = 12.3;
-        // int myInt = (int) myDb;
-        // Ref : stack overflow
         int aa = (int) a;
         int b;
-
         if ( (n % 100) > 50) {
             b = 1;
         } else {
@@ -60,7 +54,7 @@ final class Solution {
         }
         return ((aa + b) * 100 );
    }
-    
+
     /**
      * Main function.
      *
