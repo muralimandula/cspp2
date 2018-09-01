@@ -17,15 +17,15 @@ public final class Solution {
     /**
      * Is prime checking.
      * @param      n
-     * @return
+     * @return is prime value.
      */
-    
-    public static int isprime(int n) {
+
+    public static int isprime(final int n) {
         int count = 0;
         for (int i = 2; i < n; i++) {
             if (n % i == 0) {
-              count += 1;  
-            } 
+              count += 1;
+            }
               }
         if (count == 0) {
             return 1;
@@ -41,15 +41,14 @@ public final class Solution {
      */
     public static void oddComposites(final int n) {
     // write your code here
-
-        for (int i = 3; i < n; i++) {
+        final int start = 3;
+        for (int i = start; i < n; i++) {
             int iprime = isprime(i);
             if ((i % 2 != 0) && (iprime == 0)) {
                 System.out.println(i);
             }
         }
-    }    
-
+    }
     /**
     * main method as driver program.
     * @param args is the parameter for this method
