@@ -43,12 +43,12 @@ final class Solution {
      * @return     { description_of_the_return_value }.
      */
     public static int rounding(final int n) {
-
-        double a = Math.floor(n / 100);
-        int aa = (int) a;
-        int b;
         final int hun = 100;
         final int fif = 50;
+        double a = Math.floor(n / hun);
+        int aa = (int) a;
+        int b;
+
         if ((n % hun) > fif) {
             b = 1;
         } else {
