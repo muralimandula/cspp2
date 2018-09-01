@@ -16,7 +16,7 @@ public final class Solution {
 
     /**
      * Is prime checking.
-     * @param      n
+     * @param n passing n for prime check.
      * @return is prime value.
      */
 
@@ -59,3 +59,4 @@ public final class Solution {
         oddComposites(n);
     }
 }
+
