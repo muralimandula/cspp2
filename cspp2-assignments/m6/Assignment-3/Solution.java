@@ -34,7 +34,6 @@ final class Solution {
             } else {
                 charArray[i] = charArray[i];
             }
-            
         }
         return charArray;
     }
