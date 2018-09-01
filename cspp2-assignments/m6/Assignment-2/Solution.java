@@ -47,12 +47,12 @@ final class Solution {
         double a = Math.floor(n / 100);
         int aa = (int) a;
         int b;
-        if ( (n % 100) > 50) {
+        if ((n % 100) > 50) {
             b = 1;
         } else {
             b = 0;
         }
-        return ((aa + b) * 100 );
+        return ((aa + b) * 100);
    }
 
     /**
