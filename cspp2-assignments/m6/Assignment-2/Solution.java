@@ -27,16 +27,16 @@ final class Solution {
 
     // write ypur code here
 
-        // for (int i = 0; i < rows; i++) {
-        //     for (int j = 0; j < columns-1; j++) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
 
-        //         if (a[rows][columns] < 51) {
-        //             a[rows][columns] = 0;
-        //         } else {
-        //             a[rows][columns] = rounding(a[rows][columns]);
-        //            }
-        //     }
-        // }
+                if (a[i][j] < 51) {
+                    a[i][j] = 0;
+                } else {
+                    a[i][j] = rounding(a[i][j]);
+                   }
+            }
+        }
         return a;
     }
 
