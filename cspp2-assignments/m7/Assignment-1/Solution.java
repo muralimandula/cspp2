@@ -61,3 +61,4 @@ final class Solution {
         System.out.println(obj.validateData());
     }
 }
+
