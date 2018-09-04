@@ -30,13 +30,13 @@ public class List {
    */
 
   // declare a private int[]
-  
+
    /**
    * list class variable of type ineger array.
    */
    private int[] list;
 
-  
+
   // don't create the array yet using new
   // that's the job of the List constructor
 
@@ -61,7 +61,7 @@ public class List {
    */
 
   // declare a private int size
-  
+
   /**
    * size class variable.
    */
@@ -195,9 +195,9 @@ public class List {
   public int get(final int index) {
     // Replace the code below to write the code for get
     if (index > size) {
-      return -1;         //index out of bound 
+      return -1;         //index out of bound
     } else {
-      return list[index]; //return 
+      return list[index]; //return
     }
   }
 
