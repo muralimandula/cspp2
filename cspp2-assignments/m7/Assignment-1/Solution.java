@@ -55,7 +55,7 @@ final class Solution {
     public static void main(final String[] args) {
         Scanner readInput = new Scanner(System.in);
         String input = readInput.nextLine();
-        InputValidator obj = new InputValidator(input); 
+        InputValidator obj = new InputValidator(input);
         //Object created in InputValidator class.
         // Object "object" with attribute "input"
         System.out.println(obj.validateData());
