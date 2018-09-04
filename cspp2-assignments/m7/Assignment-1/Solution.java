@@ -3,13 +3,13 @@ import java.util.Scanner;
  * another class for input validation.
  */
 final class InputValidator {
-    
+
 
     /**
      * { var_description }.
      */
     private String input;
-    
+
     /**
      * Constructs the object.
      *
@@ -18,11 +18,11 @@ final class InputValidator {
     InputValidator(final String inp) {
         this.input = inp;
     }
-    
+
 
     /**
      * { function_description }.
-     * makes use of this."created_object" with in InputValidator class.  
+     * makes use of this."created_object" with in InputValidator class.
      *
      * @return     { description_of_the_return_value }
      */
@@ -55,8 +55,9 @@ final class Solution {
     public static void main(final String[] args) {
         Scanner readInput = new Scanner(System.in);
         String input = readInput.nextLine();
-        InputValidator obj = new InputValidator(input); //Object created in InputValidator class.
-                                                    // Object "object" with attribute "input"
+        InputValidator obj = new InputValidator(input); 
+        //Object created in InputValidator class.
+        // Object "object" with attribute "input"
         System.out.println(obj.validateData());
     }
 }
