@@ -20,6 +20,11 @@ import java.util.Scanner;
  * Class for fibonacci.
  */
 public class Fibonacci {
+
+
+    private Fibonacci() {
+        //dummy
+    }
     /*
      * fib is a static method takes a argument n
      * n is the count of the fibonacci numbers to be generated.
@@ -27,10 +32,18 @@ public class Fibonacci {
      *
      * Look for the hint.txt if some of the testcases fail.
      */
+    /**
+     * { function_description }
+     *
+     * @param      n     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public static List fib(final int n) {
 
         // todo - complete this method
-        List l = new List();
+        final int listsize = 500;
+        List l = new List(listsize);
 
         for (int i = 0; i < n; i++) {
             if (i < 2) {
