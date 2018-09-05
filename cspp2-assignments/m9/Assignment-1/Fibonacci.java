@@ -19,7 +19,7 @@ import java.util.Scanner;
 /**
  * Class for fibonacci.
  */
-final public class Fibonacci {
+public final class Fibonacci {
 
     /**
      * Constructs the object.
@@ -35,7 +35,7 @@ final public class Fibonacci {
      * Look for the hint.txt if some of the testcases fail.
      */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      n     { parameter_description }
      *
