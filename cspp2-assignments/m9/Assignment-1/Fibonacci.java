@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /*
  * In the previous module you have created List ADT.
- * ADTs are developed as reusable libraries
+ * ADTs are developed as reusable libraries.
  * i.e., anyone who needs the ADT can use it in their program
  * A program that uses the ADT is called a "client" of the ADT
  * The client typically instantiates an object of the ADT
@@ -19,9 +19,11 @@ import java.util.Scanner;
 /**
  * Class for fibonacci.
  */
-public class Fibonacci {
+final public class Fibonacci {
 
-
+    /**
+     * Constructs the object.
+     */
     private Fibonacci() {
         //dummy
     }
