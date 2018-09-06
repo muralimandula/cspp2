@@ -333,11 +333,13 @@ public class List {
      */
     public void add(final String[] items) {
         //Inserts the specified element at the end of the list.
-
-        size++;
         Integer index = Integer.valueOf(items[0]);
         Integer num = Integer.valueOf(items[1]);
-        if (index >= 0 && index <= size) {
+        if (size == 0) {
+            size++;
+            list[index] = num;
+        } else if (index >= 0 && index <= size) {
+            size++;
             for (int i = size; i > index; i--) {
             list[i] = list[i - 1];
             }
