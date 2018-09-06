@@ -265,8 +265,9 @@ public class List {
      * @return     String representation of the object.
      */
     public String toString() {
-        if (size == 0)
+        if (size == 0) {
             return "";
+        }
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
@@ -294,7 +295,7 @@ public class List {
     }
 
     /*
-     * Returns the index of the first occurrence 
+     * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
@@ -307,7 +308,9 @@ public class List {
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
-            if (item == list[i]) return i;
+            if (item == list[i]) {
+                return i;
+            }
         }
         return -1;
     }
@@ -350,7 +353,7 @@ public class List {
             list = resize();
         }
     list[size++] = num;
-    } 
+    }
 
 
     /**
