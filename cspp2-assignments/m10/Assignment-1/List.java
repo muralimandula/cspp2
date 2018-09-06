@@ -335,19 +335,23 @@ public class List {
         //Inserts the specified element at the end of the list.
         Integer index = Integer.valueOf(items[0]);
         Integer num = Integer.valueOf(items[1]);
-        if (size == 0) {
+
+        if (index >= 0 && index <= size) {
+            if (size == 0) {
             size++;
             list[index] = num;
-        } else if (index >= 0 && index <= size) {
-            size++;
-            for (int i = size; i > index; i--) {
-            list[i] = list[i - 1];
+            } else {
+                size++;
+                for (int i = size; i > index; i--) {
+                list[i] = list[i - 1];
+                }
+            list[index] = num;
             }
-            list[index] = num;
-       } else {
-        System.out.println("Negative Index Exception");
-       }
+        } else {
+            System.out.println("Negative Index Exception");
+        }
     }
+    
 
     /**
      * { function_description }.
