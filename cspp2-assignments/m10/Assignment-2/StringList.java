@@ -94,7 +94,8 @@ public class StringList implements StringListInterface {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        list = new String[10];
+        final int listsize = 20;
+        list = new String[listsize];
 
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
