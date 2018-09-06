@@ -266,7 +266,7 @@ public class List {
      */
     public String toString() {
         if (size == 0) {
-            return "";
+            return "[]";
         }
         String str = "[";
         int i = 0;
@@ -416,7 +416,7 @@ public class List {
                 case "count":
                 System.out.println(l.count(Integer.parseInt(tokens[1])));
                 break;
-                
+
                 case "add":
                 String[] addonindex = tokens[1].split(",");
                 if (addonindex.length == 1) {
