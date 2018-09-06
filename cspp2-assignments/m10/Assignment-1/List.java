@@ -213,7 +213,7 @@ public class List {
             // System.out.println("Invalid Position Exception");
             // }
         } else {
-            System.out.println("Invalid Position Exception");        
+            System.out.println("Invalid Position Exception");
         }
     }
 
