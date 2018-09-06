@@ -366,7 +366,6 @@ public class List {
         for (int i = 0; i < items.length; i++) {
             Integer num = Integer.valueOf(items[i]);
             add(num);
-            size++;
         }
     }
 
@@ -416,7 +415,8 @@ public class List {
 
                 case "count":
                 System.out.println(l.count(Integer.parseInt(tokens[1])));
-
+                break;
+                
                 case "add":
                 String[] addonindex = tokens[1].split(",");
                 if (addonindex.length == 1) {
