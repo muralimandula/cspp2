@@ -409,8 +409,10 @@ public class List {
 
 
                 case "addAll":
+                if (tokens.length == 2) {
                 String[] addall = tokens[1].split(",");
                 l.addAll(addall);
+                }
                 break;
 
                 case "count":
