@@ -211,6 +211,9 @@ public class List {
             size--;
         } else {
             System.out.println("Invalid Position Exception");
+        if (size == 0) {
+        	System.out.println("Invalid Position Exception");
+        }
         }
     }
 
