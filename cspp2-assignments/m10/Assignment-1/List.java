@@ -337,10 +337,14 @@ public class List {
         size++;
         Integer index = Integer.valueOf(items[0]);
         Integer num = Integer.valueOf(items[1]);
-        for (int i = size; i > index; i--) {
-             list[i] = list[i - 1];
-        }
-        list[index] = num;
+        if (index > 0) {
+            for (int i = size; i > index; i--) {
+            list[i] = list[i - 1];
+            }
+            list[index] = num;
+       } else {
+        System.out.println("Negative Index Exception");
+       }
     }
 
     /**
