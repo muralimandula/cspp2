@@ -216,23 +216,23 @@ public class List<E> {
  /*Returns a boolean indicating whether the parameter
    i.e a List object is exactly matching with the given list or not.
   */
- public boolean equals(List<E> listdata) {
-  if (this.size != listdata.size) {
-   return false;
-  }
-  for (int i = 0; i < this.size; i++) {
-   int count = 0;
-   for (int j = 0; j < listdata.size; j++) {
-    if (this.list[i].equals(listdata.list[j])) {
-     count++;
+    public boolean equals(List<E> listdata) {
+        if (this.size != listdata.size) {
+            return false;
+        }
+        for (int i = 0; i < this.size; i++) {
+            int count = 0;
+            for (int j = 0; j < listdata.size; j++) {
+                if (this.list[i].equals(listdata.list[j])) {
+                    count++;
+                }
+            }
+            if (count == 0) {
+                return false;
+            }
+        }
+        return true;
     }
-   }
-   if (count == 0) {
-    return false;
-   }
-  }
-  return true;
- }
  /*Removes all the elements from list*/
  public void clear() {
   // write the logic for clear.
