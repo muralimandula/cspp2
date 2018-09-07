@@ -13,7 +13,7 @@ class Student {
 	/**
 	 * Constructs the object.
 	 *
-	 * @param      name  The name
+	 * @param      nameis  The name
 	 */
 	public Student(final String nameis) {
 		//A constructor used to initialize the instance variables
@@ -426,8 +426,9 @@ public class Solution {
 				}
 				String[] arrstring3 = tokens[1].split(",");
 				List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
-				if (object != null)
+				if (object != null) {
 					System.out.println(object);
+				}
 				break;
 			}
 			case "equals":
@@ -516,15 +517,18 @@ public class Solution {
 					l.removeAll(students);
 				}
 				break;
-			case "subList": {
-				if (tokens.length != 2) break;
+			case "subList":
+				if (tokens.length != 2) {
+					break;
+				}
 				String[] arrstring3 = tokens[1].split(",");
 				List object = l.subList(Integer.parseInt(arrstring3[0]),
 				                        Integer.parseInt(arrstring3[1]));
-				if (object != null)
+				if (object != null) {
 					System.out.println(object);
+				}
 				break;
-			}
+
 			case "equals":
 				if (tokens.length == 2) {
 					String[] lt = tokens[1].split(",");
@@ -548,7 +552,7 @@ public class Solution {
 	 *
 	 * @param      args  The arguments
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		// create an object of the list to invoke methods on it
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
 		String objectType = stdin.nextLine();
