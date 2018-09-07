@@ -83,11 +83,11 @@ public class Solution {
 		//dummy constructor.
 	}
 
-    /**
-     * for the case objects.
-     *
-     * @param      stdin  The stdin
-     */
+	/**
+	 * for the case objects.
+	 *
+	 * @param      stdin  The stdin
+	 */
 	public static void objectsmethod(final Scanner stdin) {
 		List<Student> listStudent = new List();
 		while (stdin.hasNext()) {
@@ -381,7 +381,7 @@ public class Solution {
 					if (tokens.length == 2) {
 						String[] t1 = tokens[1].split(",");
 						Float temp[] = new Float[t1.length];
-						for (int i = 0; i < t1.length ; i++ ) {
+						for (int i = 0; i < t1.length; i++) {
 							temp[i] = Float.parseFloat(t1[i]);
 						}
 						listFloat.addAll(temp);
@@ -419,11 +419,13 @@ public class Solution {
 			break;
 
 
-		case "C"://This case will be executed for Character type list
+		case "C":
+		//This case will be executed for Character type list
 			charmethod(stdin);
 			break;
 
-		case "D"://This case will be executed for Double type list
+		case "D":
+		//This case will be executed for Double type list
 			doublemethod(stdin);
 			break;
 
