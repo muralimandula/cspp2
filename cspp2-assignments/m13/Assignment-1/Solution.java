@@ -62,11 +62,8 @@ class Set {
                 c++;
             }
         }
-        if (c == 0) {
-            return false;
-        } else {
-            return true;
-        }
+
+        return c != 0;
     }
 
     /**
@@ -98,16 +95,16 @@ class Set {
         // size += 1;
     }
 
-     /**
-     * hashcode.
-     *
-     * @return     this.hashCode().
-     */
-     // @Override
-     // public int hashCode() {
+    /**
+    * hashcode.
+    *
+    * @return     this.hashCode().
+    */
+    // @Override
+    // public int hashCode() {
 
-     //  return this.hashCode();
-     // }
+    //  return this.hashCode();
+    // }
 
     /**
      * inserting/adding list of integers.
@@ -116,7 +113,7 @@ class Set {
      */
     public void add(final int[] addn) {
         for (int i = 0; i < addn.length; i++) {
-            if (contains(addn[i]) == false) {
+            if (!(contains(addn[i]))) {
                 add(addn[i]);
             }
         }
