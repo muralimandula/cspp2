@@ -16,45 +16,45 @@ class Set {
 	 */
 	private int size;
 
-    /**
-     * temporary size when to use intersection also.
-     */
+	/**
+	 * temporary size when to use intersection also.
+	 */
 	private int tempsize;
 
-    /**
-     * our iterable int array.
-     */
+	/**
+	 * our iterable int array.
+	 */
 	private int[] list;
 
-    /**
-     * Initilising int capacity or size.
-     */
+	/**
+	 * Initilising int capacity or size.
+	 */
 	private final int listsize = 100;
 
-    /**
-     * Constructs the object.
-     */
+	/**
+	 * Constructs the object.
+	 */
 	public Set() {
 		list = new int[listsize];
 		size = 0;
 	}
 
-    /**
-     * returns size of out iterable list.
-     *
-     * @return     { description_of_the_return_value }
-     */
+	/**
+	 * returns size of out iterable list.
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public int size() {
 		return size;
 	}
 
-    /**
-     * returns boolean.
-     *
-     * @param      n     { parameter_description }
-     *
-     * @return    true/false.
-     */
+	/**
+	 * returns boolean.
+	 *
+	 * @param      n     { parameter_description }
+	 *
+	 * @return    true/false.
+	 */
 	public boolean contains(final int n) {
 		int c = 0;
 		for (int i = 0; i < size; i++) {
@@ -69,11 +69,11 @@ class Set {
 		}
 	}
 
-    /**
-     * Returns a string representation of the object.
-     *
-     * @return     String representation of the object.
-     */
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		if (size == 0) {
 			size = tempsize;
@@ -81,28 +81,39 @@ class Set {
 		}
 		String string = "{";
 		for (int i = 0; i < size - 1; i++) {
-			string = string + list[i] + ",";
+			string = string + list[i] + ", ";
 		}
 		string = string + list[size - 1] + "}";
 		size = tempsize;
 		return string;
 	}
 
-    /**
-     * add to the main list.
-     *
-     * @param      n  integer to add.
-     */
+	/**
+	 * add to the main list.
+	 *
+	 * @param      n  integer to add.
+	 */
 	public void add(final int n) {
 		list[size] = n;
 		size += 1;
 	}
 
-    /**
-     * inserting/adding list of integers.
-     *
-     * @param      addn  The addn
-     */
+	 /**
+	 * hashcode.
+	 *
+	 * @return     this.hashCode().
+	 */
+	 @Override
+	 public int hashCode() {
+
+	  return this.hashCode();
+	 }
+
+	/**
+	 * inserting/adding list of integers.
+	 *
+	 * @param      addn  The addn
+	 */
 	public void add(final int[] addn) {
 		for (int i = 0; i < addn.length; i++) {
 			if (contains(addn[i]) == false) {
@@ -112,14 +123,14 @@ class Set {
 	}
 
 
-    /**
-     * taking two integer arrays.
-     *
-     * @param      thisa  The thisa
-     * @param      thatb  The thatb
-     *
-     * @return     { description_of_the_return_value }
-     */
+	/**
+	 * taking two integer arrays.
+	 *
+	 * @param      thisa  The thisa
+	 * @param      thatb  The thatb
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public int[] intersection(final int[] thisa, final int[] thatb) {
 		int[] newlist = new int[thatb.length];
 		int newsize = 0;
@@ -136,14 +147,14 @@ class Set {
 		return newlist;
 	}
 
-    /**
-     * cartrsian of two int arrays.
-     *
-     * @param      thisa  The thisa
-     * @param      thatb  The thatb
-     *
-     * @return     { description_of_the_return_value }
-     */
+	/**
+	 * cartrsian of two int arrays.
+	 *
+	 * @param      thisa  The thisa
+	 * @param      thatb  The thatb
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public int[][] cartesianProduct(final int[] thisa, final int[] thatb) {
 		final int cpsize = thisa.length * thatb.length;
 		int[][] cp = new int[cpsize][thisa.length];
