@@ -14,7 +14,7 @@ class Set {
     /**
      * Size declaration for list.
      */
-    private int size = 0;
+    int size = 0;
 
     /**
      * temporary size when to use intersection also.
@@ -36,7 +36,7 @@ class Set {
      */
     Set() {
         list = new int[listsize];
-        size = 0;
+
     }
 
     /**
