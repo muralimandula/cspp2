@@ -14,7 +14,7 @@ class Set {
     /**
      * Size declaration for list.
      */
-    private int size;
+    private int size = 0;
 
     /**
      * temporary size when to use intersection also.
@@ -91,8 +91,11 @@ class Set {
      * @param      n  integer to add.
      */
     public void add(final int n) {
-        list[size++] = n;
-        // size += 1;
+
+        if (!(contains(n))) {
+            list[size] = n;
+            size += 1;
+        }
     }
 
     /**
@@ -100,11 +103,11 @@ class Set {
     *
     * @return     this.hashCode().
     */
-    // @Override
-    // public int hashCode() {
+    @Override
+    public int hashCode() {
 
-    //  return this.hashCode();
-    // }
+        return this.hashCode();
+    }
 
     /**
      * inserting/adding list of integers.
