@@ -253,7 +253,7 @@ public final class Solution {
                 // System.out.println(s.intersection(intArray));
                 int[] a1 = intArray(tokens[1]);
                 int[] b1 = intArray(tokens[2]);
-                System.out.println(s.intersection(a1, b1));
+                System.out.println(Arrays.toString(s.intersection(a1, b1)));
                 break;
             case "cartesianProduct":
                 s = new Set();
@@ -266,7 +266,7 @@ public final class Solution {
                 // (s.cartesianProduct(t)));
                 int[] cp1 = intArray(tokens[1]);
                 int[] cp2 = intArray(tokens[2]);
-                System.out.println(s.cartesianProduct(cp1, cp2));
+                System.out.println(Arrays.toString(s.cartesianProduct(cp1, cp2)));
                 break;
             default:
                 break;
