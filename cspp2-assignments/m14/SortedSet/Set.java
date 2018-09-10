@@ -43,15 +43,15 @@ public class Set {
      * @return     value at the index.
      */
     public int get(int index) {
-        if (index >= 0 && index < this.size()) {
-            return this.array[index];
+        if (index >= 0 && index < size()) {
+            return array[index];
         }
         return -1;
     }
 
 
     public void sizeinc() {
-        this.size++;
+        size++;
     }
 
 
@@ -62,7 +62,7 @@ public class Set {
      * @return   size of the set.
      */
     public int size() {
-        return this.size;
+        return size;
     }
 
     /**
@@ -74,7 +74,7 @@ public class Set {
      */
     public boolean contains(final int item) {
         for (int i = 0; i < size; i++) {
-            if (this.array[i] == item) {
+            if (array[i] == item) {
                 return true;
             }
         }
@@ -89,7 +89,7 @@ public class Set {
     public String toString() {
         int[] temp = new int[size];
         for (int i = 0; i < size; i++) {
-            temp[i] = this.get(i);
+            temp[i] = get(i);
         }
         return Arrays.toString(temp).replace("[", "{").replace("]", "}");
     }
@@ -101,7 +101,7 @@ public class Set {
         final int factor = 2;
         int[] newarr = new int[factor * size];
         for (int i = 0; i < size; i++) {
-            newarr[i] = this.array[i];
+            newarr[i] = array[i];
         }
 
         array = newarr;
@@ -113,11 +113,11 @@ public class Set {
      * @param      item  The item to be added.
      */
     public void add(final int item) {
-        if (size == this.array.length) {
+        if (size == array.length) {
             resize();
         }
         if (!contains(item)) {
-            array[size] = item;
+            array[size++] = item;
         }
     }
 
@@ -126,7 +126,7 @@ public class Set {
      *
      * @param      items  The items of int array.
      */
-    public void add(int[] items) {
+    public void add(final int[] items) {
         for (int i : items) {
             if (!contains(i)) {
                 add(i);
@@ -135,16 +135,16 @@ public class Set {
     }
 
     public void arraysetter(int item, int index) {
-        this.array[index] = item;
+        array[index] = item;
     }
 
 
     public int getarraylength() {
-        return this.array.length;
+        return array.length;
     }
 
     public int[] getArray() {
-        return Arrays.copyOf(this.array, this.size);
+        return Arrays.copyOf(array, size);
     }
 
 
@@ -162,7 +162,7 @@ public class Set {
     public Set intersection(final Set other) {
         Set intersectionset = new Set();
 
-        for (int i : this.array) {
+        for (int i : array) {
             if (other.contains(i)) {
                 intersectionset.add(i);
             }
@@ -181,7 +181,7 @@ public class Set {
     public Set retainAll(final int[] items) {
         Set retainset = new Set();
 
-        for (int i : this.array) {
+        for (int i : array) {
             for (int j : items) {
                 if (i == j) {
                     retainset.add(i);
@@ -200,12 +200,12 @@ public class Set {
      * @return     cartesian product of two sets.
      */
     public int[][] cartesianProduct(final Set obj) {
-        int cpsize = this.size() * obj.size();
+        int cpsize = size() * obj.size();
         int n = 0;
         int[][] cp2d = new int[cpsize][2];
         int k = 0;
         for (int i = 0; i < cpsize; i++) {
-            cp2d[i][0] = this.array[n];
+            cp2d[i][0] = array[n];
             cp2d[i][1] = obj.array[k++];
             if (k == obj.size()) {
                 k = 0;
