@@ -243,7 +243,7 @@ public final class Solution {
                 // t.add(intArray);
                 int[] a = intArray(tokens[1]);
                 int[] b = intArray(tokens[2]);
-                System.out.println(s.intersection(a, b));
+                System.out.println(Arrays.toString(s.intersection(a, b)));
                 break;
             case "retainAll":
                 s = new Set();
