@@ -85,7 +85,7 @@ class SortedSet extends Set {
      */
     public int[] subSet(final int start, final int end) {
         if (start > end) {
-            System.out.println("Invalid Argument to Subset Exception");
+            System.out.println("Invalid Arguments to Subset Exception");
             return null;
         }
 
@@ -184,7 +184,7 @@ public final class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // instantiate this set
         SortedSet s = new SortedSet();
         // code to read the test cases input file
