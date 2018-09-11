@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 /**
- * Class List.
+ * Exception for signaling invalid position errors.
  */
 class InvalidPositionException extends Exception {
     InvalidPositionException(final String s) {
@@ -11,12 +11,18 @@ class InvalidPositionException extends Exception {
     }
 }
 
+/**
+ * Exception for signaling invalid index errors.
+ */
 class InvalidIndexException extends Exception {
     InvalidIndexException(final String i) {
         super(i);
     }
 }
 
+/**
+ * List of .
+ */
 public class List {
     //Implement all the methods mentioned to build a ListADT
 
@@ -346,13 +352,16 @@ public class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
+
     /**
-     * subList generator.
+     * Sublist.
      *
-     * @param      start  The start index.
-     * @param      end    The end index.
+     * @param      start                  The start
+     * @param      end                    The end
      *
-     * @return     List.
+     * @return     { description_of_the_return_value }
+     *
+     * @throws     InvalidIndexException  { exception_description }
      */
     public List subList(final int start, final int end) throws InvalidIndexException {
         // write the logic for subList
@@ -515,7 +524,7 @@ public class List {
                 if (tokens.length == 2) {
                     String[] t = tokens[1].split(",");
                     if (t.length == 1) {
-                        System.out.println(l.count(Integer.parseInt(tokens[1])));
+                    System.out.println(l.count(Integer.parseInt(tokens[1])));
                     }
                 }
                 break;
