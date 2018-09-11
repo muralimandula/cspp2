@@ -137,19 +137,17 @@ class SortedSet extends Set {
      */
     public int[] headSet(final int element)  throws SetEmptyException {
         if (element <= get(0)) {
-            return new int[] {};
-        }
-
+            throw new SetEmptyException("");
+        }else {
         int i = 0;
         for (; i < size(); i++) {
             if (get(i) >= element) {
                 break;
-            }
-        }
-
+        	    }
+    	    }
         return Arrays.copyOf(getArray(), i);
-
-    }
+        }
+	}
     /**
      * last element.
      *
@@ -161,9 +159,7 @@ class SortedSet extends Set {
         } else {
         return get(this.size() - 1);
         }
-
     }
-
 }
 
 
