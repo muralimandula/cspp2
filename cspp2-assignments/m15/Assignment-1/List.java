@@ -426,7 +426,7 @@ public class List {
              		   }
              		  catch(InvalidPositionException e)
              		  {
-             		  	System.out.println(e);
+             		  	System.out.println("Invalid Position Exception");
              		  }
             	}
                 break;
