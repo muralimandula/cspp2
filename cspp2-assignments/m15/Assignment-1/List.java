@@ -339,7 +339,8 @@ public class List {
         //     System.out.println("Index Out of Bounds Exception");
         //     return null;
         // }
-        List newList = new List(end - start);
+        final int newsize = end - start;
+        List newList = new List(newsize);
         for (int i = start; i < end; i++) {
             newList.add(list[i]);
         }
