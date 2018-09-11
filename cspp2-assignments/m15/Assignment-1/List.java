@@ -196,9 +196,11 @@ public class List {
      */
 
     /**
-     * removes an element from list.
+     * { function_description }.
      *
-     * @param      index  The index
+     * @param      index                     The index
+     *
+     * @throws     InvalidPositionException  { exception_description }
      */
     public void remove(final int index) throws InvalidPositionException {
         // write the logic for remove here. Think about what to do to the size
@@ -375,7 +377,8 @@ public class List {
      *
      * @throws     InvalidIndexException  { exception_description }
      */
-    public List subList(final int start, final int end) throws InvalidIndexException {
+    public List subList(final int start, final int end)
+     throws InvalidIndexException {
         // write the logic for subList
         // if (start < 0 || end < 0 || start > end || size == 0) {
         //     System.out.println("Index Out of Bounds Exception");
