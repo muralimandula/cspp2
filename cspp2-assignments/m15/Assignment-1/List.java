@@ -10,6 +10,13 @@ class InvalidPositionException extends Exception{
 		super(s);
 	}
 }
+
+class InvalidIndexException extends Exception{
+	InvalidIndexException(String i){
+		super(i);
+	}
+}
+
 public class List {
     //Implement all the methods mentioned to build a ListADT
 
@@ -164,7 +171,7 @@ public class List {
         // write the logic for remove here. Think about what to do to the size
         // variable.
         if (!(index >= 0 && index < size)) {
-            throw new InvalidPositionException("Invalid Position Exception");
+            throw new InvalidPositionException("Exception handling");
         }
         else {
             for (int i = index; i < size; i++) {
@@ -333,19 +340,22 @@ public class List {
      *
      * @return     List.
      */
-    public List subList(final int start, final int end) {
+    public List subList(final int start, final int end) throws InvalidIndexException {
         // write the logic for subList
         // if (start < 0 || end < 0 || start > end || size == 0) {
         //     System.out.println("Index Out of Bounds Exception");
         //     return null;
         // }
-        final int newsize = end - start;
-        List newList = new List(newsize);
+        if (start >= 0 && end >= 0)
+        {
+        List newList = new List(end - start);
         for (int i = start; i < end; i++) {
             newList.add(list[i]);
-        }
-
+        	}
         return newList;
+        }else {
+        	throw new InvalidIndexException("");
+        }
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
@@ -476,7 +486,7 @@ public class List {
                                         Integer.parseInt(arrstring3[1]));
                     System.out.println(object);
                 }
-                catch(IndexOutOfBoundsException e) {
+                catch(InvalidIndexException e) {
                 	System.out.println("Index Out of Bounds Exception");
                 }
                 break;
