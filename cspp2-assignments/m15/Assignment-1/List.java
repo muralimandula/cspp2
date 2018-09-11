@@ -6,6 +6,11 @@ import java.util.Arrays;
  * Exception for signaling invalid position errors.
  */
 class InvalidPositionException extends Exception {
+    /**
+     * Constructs the object.
+     *
+     * @param      s     { parameter_description }
+     */
     InvalidPositionException(final String s) {
         super(s);
     }
@@ -15,6 +20,11 @@ class InvalidPositionException extends Exception {
  * Exception for signaling invalid index errors.
  */
 class InvalidIndexException extends Exception {
+    /**
+     * Constructs the object.
+     *
+     * @param      i     { parameter_description }
+     */
     InvalidIndexException(final String i) {
         super(i);
     }
@@ -179,7 +189,8 @@ public class List {
      * [1,2,3,0,0,0,0,0,0,0] remove(1) would remove the item 2 which is at index
      * position 1. But how do you remove the item from an array? Well, the way
      * to remove it is to move all the items, that are to the right of the
-     * removed item, to the left So, the new array looks like this. array =
+     * removed item, to the left So, the new array looks like this.
+     * array =
      * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
      *
      */
@@ -349,7 +360,8 @@ public class List {
     Returns a list object containing elements, including startIndex and
     excluding endIndex. The first parameter indicates the startIndex and the
     second parameter indicates the endIndex. Returns null and print
-    "Index Out of Bounds Exception" if any of values start and end are negative
+    "Index Out of Bounds Exception" if any of values start
+    and end are negative
     and also if start is greater than end.
     */
 
