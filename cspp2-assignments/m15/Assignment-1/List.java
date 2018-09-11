@@ -130,6 +130,16 @@ public class List {
 		list[size++] = item;
 	}
 
+
+	public int count(final int item) {
+		int count = 0;
+        for(int i = 0; i < size; i++) {
+          	if (item == list[i]) {
+          		count++;
+          	}
+        }
+        return count;
+	}
 	/*
 	 * The size method returns the value of the size. The purpose of the method
 	 * is to announce the size of the list to the objects outside the list
@@ -495,6 +505,14 @@ public class List {
 			case "clear":
 				l.clear();
 				break;
+			case "count":
+			    	if (tokens.length == 2) {
+					String[] t = tokens[1].split(",");
+					if (t.length == 1) {
+						l.count(Integer.parseInt(tokens[1]));
+					}
+				}
+			    break;
 			default:
 				break;
 			}
