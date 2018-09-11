@@ -346,7 +346,7 @@ public class List {
         //     System.out.println("Index Out of Bounds Exception");
         //     return null;
         // }
-        if (start >= 0 && end >= 0)
+        if (start >= 0 && end > 0)
         {
         List newList = new List(end - start);
         for (int i = start; i < end; i++) {
