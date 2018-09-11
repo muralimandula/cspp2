@@ -253,6 +253,7 @@ public final class Solution {
 	            catch(SetEmptyException eset) {
 	            	System.out.println("Set Empty Exception");
 	            }
+	            break;
 
             case "intersection":
                 s = new SortedSet();
