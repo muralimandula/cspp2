@@ -6,13 +6,13 @@ import java.util.Arrays;
  * Class List.
  */
 class InvalidPositionException extends Exception {
-	InvalidPositionException(String s) {
+	InvalidPositionException(final String s) {
 		super(s);
 	}
 }
 
 class InvalidIndexException extends Exception {
-	InvalidIndexException(String i) {
+	InvalidIndexException(final String i) {
 		super(i);
 	}
 }
@@ -130,15 +130,21 @@ public class List {
 		list[size++] = item;
 	}
 
-
+	/**
+	 * { function_description }.
+	 *
+	 * @param      item  The item
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public int count(final int item) {
 		int count = 0;
-        for(int i = 0; i < size; i++) {
-          	if (item == list[i]) {
-          		count++;
-          	}
-        }
-        return count;
+		for (int i = 0; i < size; i++) {
+			if (item == list[i]) {
+				count++;
+			}
+		}
+		return count;
 	}
 	/*
 	 * The size method returns the value of the size. The purpose of the method
@@ -506,13 +512,13 @@ public class List {
 				l.clear();
 				break;
 			case "count":
-			    	if (tokens.length == 2) {
+				if (tokens.length == 2) {
 					String[] t = tokens[1].split(",");
 					if (t.length == 1) {
 						l.count(Integer.parseInt(tokens[1]));
 					}
 				}
-			    break;
+				break;
 			default:
 				break;
 			}
