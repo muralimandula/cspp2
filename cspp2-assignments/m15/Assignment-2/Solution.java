@@ -247,12 +247,31 @@ public final class Solution {
 
                 break;
             case "last":
-            try {
-                System.out.println(s.last());
-            }
-            catch(SetEmptyException eset) {
-            	System.out.println("Set Empty Exception");
-            }
+	            try {
+	                System.out.println(s.last());
+	            }
+	            catch(SetEmptyException eset) {
+	            	System.out.println("Set Empty Exception");
+	            }
+
+            case "intersection":
+                s = new SortedSet();
+                Set t = new Set();
+                intArray = intArray(tokens[1]);
+                s.add(intArray);
+                intArray = intArray(tokens[2]);
+                t.add(intArray);
+                System.out.println(s.intersection(t));
+                break;
+
+            case "retainAll":
+                s = new SortedSet();
+                intArray = intArray(tokens[1]);
+                s.add(intArray);
+                intArray = intArray(tokens[2]);
+                System.out.println(s.retainAll(intArray));
+                break;
+
             default:
                 break;
             }
