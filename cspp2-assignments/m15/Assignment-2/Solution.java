@@ -102,7 +102,7 @@ class SortedSet extends Set {
      */
     public int[] subSet(final int start, final int end) throws
      InvalidSubsetSelectionException {
-        if (!(start > end)) {
+        if (start > end) {
         	throw new InvalidSubsetSelectionException("");
 
 	        } else {
