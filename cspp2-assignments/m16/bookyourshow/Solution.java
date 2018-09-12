@@ -20,7 +20,7 @@ public class Solution {
     /**
      * { var_description }.
      */
-    final private int byssize = 100;
+    private final int byssize = 100;
 
     /**
      * Constructs the object..
@@ -84,6 +84,7 @@ public class Solution {
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
+        final int a = 3, b = 4, c = 6, d = 24;
         Solution addmovieobj = new Solution();
         // Solution bookobj = new Solution();
         Scanner input = new Scanner(new BufferedInputStream(System.in));
@@ -101,7 +102,7 @@ public class Solution {
 
             case "add":
                 String moviename = bysmovie[1];
-                String bysseats = bysinput2[4].substring(6);
+                String bysseats = bysinput2[b].substring(c);
                 String movie;
                 movie = moviename + "-" + bysinput[1] + "-" + bysseats;
                 // System.out.println(movie);
@@ -111,10 +112,10 @@ public class Solution {
             case "book":
                 String moviename2 = bysmovie[1];
                 String userbooking;
-                String userseats = bysinput2[4].substring(24);
+                String userseats = bysinput2[b].substring(d);
                  // works for case1, because username is 6 chars
                 userbooking = moviename2 + "-" + bysinput[1]
-                 + "-" + bysinput[2] + "-" + bysinput[3] + "-" + userseats;
+                 + "-" + bysinput[2] + "-" + bysinput[a] + "-" + userseats;
 
                 addmovieobj.add(userbooking);
                 break;
