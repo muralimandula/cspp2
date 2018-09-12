@@ -48,14 +48,29 @@ public class Solution {
      * @param      bookshowtime  The bookshowtime
      */
     public void addbooking(final String addmovie,
-     final String moviename2, final String bookshowtime) {
+     final String moviename2, final String bookshowtime, final String userseats) {
             int bookingcount = 0;
+            String[] seats = userseats.substring(1, userseats.length()-1).split(",");
+            System.out.println(userseats);
             for (int i = 0; i < size; i++) {
                 if (byshow[i].contains(moviename2)
                  && byshow[i].contains(bookshowtime)) {
                     byshow[size] = addmovie;
                     size++;
                     bookingcount++;
+                    // System.out.println(byshow[i]);
+                    for(int j =0; j < seats.length ; j++) {
+                        System.out.println(seats[j]);
+                        int index = byshow[i].indexOf(seats[j]);
+                        // if (byshow[i].charAt(index+seats[j].length()) == ','
+                        //  || byshow[i].charAt(index+seats[j].length()) == ']') {
+                        //     byshow[i] = byshow[i].replace(seats[j],"N/A");
+                        // }
+                        //
+                        byshow[i] = byshow[i].replace(seats[j]+",","N/A,");
+                        byshow[i] = byshow[i].replace(seats[j]+"]","N/A]");
+
+                    }
                     break;
                 }
             }
@@ -81,6 +96,18 @@ public class Solution {
             }
         }
         return "No show";
+    }
+
+    /**
+     * Shows all.
+     */
+    public void showAll() {
+
+        for (int k = 0; k < size; k++) {
+            if (byshow[k].contains(",[")) {
+                System.out.println(byshow[k]);
+            }
+       }
     }
 
     /**
@@ -126,7 +153,7 @@ public class Solution {
                 String moviename = bysmovie[1];
                 String bysseats = bysinput2[b].substring(c);
                 String movie;
-                movie = moviename + "-" + bysinput[1] + "-" + bysseats;
+                movie = moviename + "," + bysinput[1] + "," + bysseats;
                 addmovieobj.addmovie(movie);
                 break;
 
@@ -139,7 +166,8 @@ public class Solution {
                 String userseats = bysinput2[b].substring(d);
                 userbooking = moviename2 + "-" + bookshowtime
                  + "-" + username + "-" + bookusercontact + "-" + userseats;
-                addmovieobj.addbooking(userbooking, moviename2, bookshowtime);
+                addmovieobj.addbooking(userbooking, moviename2,
+                                                     bookshowtime, userseats);
                 break;
 
             case "get":
@@ -155,6 +183,10 @@ public class Solution {
                 String usercontact = bysinput[2];
                 System.out.println(addmovieobj.printbooking(moviename4,
                  showbooked, usercontact));
+                break;
+
+            case "showAll":
+                addmovieobj.showAll();
                 break;
 
             default:
