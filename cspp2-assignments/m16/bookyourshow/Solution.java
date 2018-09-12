@@ -51,7 +51,8 @@ public class Solution {
      final String moviename2, final String bookshowtime) {
             int bookingcount = 0;
             for (int i = 0; i < size; i++) {
-                if (byshow[i].contains(moviename2) && byshow[i].contains(bookshowtime)) {
+                if (byshow[i].contains(moviename2)
+                 && byshow[i].contains(bookshowtime)) {
                     byshow[size] = addmovie;
                     size++;
                     bookingcount++;
@@ -95,7 +96,8 @@ public class Solution {
      final String showbooked, final String usercontact) {
         for (int i = 0; i < size; i++) {
             if ((byshow[i].contains(moviename)
-             && byshow[i].contains(usercontact)) && byshow[i].contains(showbooked)) {
+             && byshow[i].contains(usercontact))
+              && byshow[i].contains(showbooked)) {
                 return usercontact + " " + moviename + " " + showbooked;
             }
         }
@@ -110,26 +112,21 @@ public class Solution {
     public static void main(final String[] args) {
         final int a = 3, b = 4, c = 6, d = 24;
         Solution addmovieobj = new Solution();
-        // Solution bookobj = new Solution();
         Scanner input = new Scanner(new BufferedInputStream(System.in));
         while (input.hasNext()) {
 
 
             String readinput = input.nextLine();
             String[] bysinput = readinput.split(",");
-             //to take case add/book
             String[] bysmovie = bysinput[0].split(" ");
             String[] bysinput2 = readinput.split(" ");
-             // to operate booking and adding
 
             switch (bysmovie[0]) {
-
             case "add":
                 String moviename = bysmovie[1];
                 String bysseats = bysinput2[b].substring(c);
                 String movie;
                 movie = moviename + "-" + bysinput[1] + "-" + bysseats;
-                // System.out.println(movie);
                 addmovieobj.addmovie(movie);
                 break;
 
@@ -140,10 +137,8 @@ public class Solution {
                 String username = bysinput[2];
                 String bookusercontact = bysinput[a];
                 String userseats = bysinput2[b].substring(d);
-                 // works for case1, because username is 6 chars
                 userbooking = moviename2 + "-" + bookshowtime
                  + "-" + username + "-" + bookusercontact + "-" + userseats;
-
                 addmovieobj.addbooking(userbooking, moviename2, bookshowtime);
                 break;
 
@@ -158,8 +153,6 @@ public class Solution {
                 String moviename4 = bysmovie[1];
                 String showbooked = bysinput[1];
                 String usercontact = bysinput[2];
-                // System.out.println(moviename + "-" +
-                 // showtime + "-" + usercontact);
                 System.out.println(addmovieobj.printbooking(moviename4,
                  showbooked, usercontact));
                 break;
