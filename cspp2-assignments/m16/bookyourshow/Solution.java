@@ -46,29 +46,25 @@ public class Solution {
      * @param      addmovie      The addmovie
      * @param      moviename2    The moviename 2
      * @param      bookshowtime  The bookshowtime
+     * @param      userseats     The userseats
      */
     public void addbooking(final String addmovie,
-     final String moviename2, final String bookshowtime, final String userseats) {
+                     final String moviename2, final String bookshowtime,
+                                                   final String userseats) {
             int bookingcount = 0;
-            String[] seats = userseats.substring(1, userseats.length()-1).split(",");
-            System.out.println(userseats);
+            String[] seats = userseats.substring
+                            (1, userseats.length() - 1).split(",");
             for (int i = 0; i < size; i++) {
                 if (byshow[i].contains(moviename2)
                  && byshow[i].contains(bookshowtime)) {
                     byshow[size] = addmovie;
                     size++;
                     bookingcount++;
-                    // System.out.println(byshow[i]);
                     for(int j =0; j < seats.length ; j++) {
-                        System.out.println(seats[j]);
                         int index = byshow[i].indexOf(seats[j]);
-                        // if (byshow[i].charAt(index+seats[j].length()) == ','
-                        //  || byshow[i].charAt(index+seats[j].length()) == ']') {
-                        //     byshow[i] = byshow[i].replace(seats[j],"N/A");
-                        // }
-                        //
-                        byshow[i] = byshow[i].replace(seats[j]+",","N/A,");
-                        byshow[i] = byshow[i].replace(seats[j]+"]","N/A]");
+
+                    byshow[i] = byshow[i].replace(seats[j] + "," , "N/A,");
+                    byshow[i] = byshow[i].replace(seats[j] + "]" , "N/A]");
 
                     }
                     break;
