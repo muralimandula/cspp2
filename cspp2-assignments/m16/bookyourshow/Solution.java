@@ -51,11 +51,11 @@ public class Solution {
      final String moviename2, final String bookshowtime) {
             int bookingcount = 0;
             for (int i = 0; i < size; i++) {
-                if (byshow[i].contains(moviename2)
-                    && byshow[i].contains(bookshowtime)) {
+                if (byshow[i].contains(moviename2) && byshow[i].contains(bookshowtime)) {
                     byshow[size] = addmovie;
                     size++;
                     bookingcount++;
+                    break;
                 }
             }
             if (bookingcount == 0) {
