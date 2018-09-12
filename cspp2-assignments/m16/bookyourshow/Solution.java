@@ -1,52 +1,85 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-import java.util.Arrays;
 
+/**
+ * Class for solution.
+ */
 public class Solution {
 
-
+    /**
+     * { var_description }.
+     */
 	public String[] byshow;
 
+
+    /**
+     * { var_description }.
+     */
 	public int size;
-	// public String[] showtime;
-	// public String[] Seats;
-	// public String[] user;
-	// public int[] mobilenum;
-	// public String[] booking;
-	//
+
+	/**
+	 * Constructs the object..
+	 */
 	public Solution() {
 		byshow = new String[100];
 		size = 0;
 	}
 
-
+    /**
+     * { function_description }.
+     *
+     * @param      addmovie  The addmovie
+     */
 	public void add(final String addmovie) {
 		byshow[size] = addmovie;
 		size++;
 	}
 
-
+    /**
+     * { function_description }.
+     *
+     * @param      moviename  The moviename
+     * @param      showtime   The showtime
+     *
+     * @return     { description_of_the_return_value }
+     */
 	public String getmovie(final String moviename, final String showtime) {
 		for (int i = 0; i < size; i++) {
 			// System.out.println(byshow[i]);
 			// System.out.println(moviename);
-			if (byshow[i].contains(moviename) && byshow[i].contains(showtime)) {
+			if (byshow[i].contains(moviename)
+			 && byshow[i].contains(showtime)) {
 				return moviename + "," + showtime ;
 			}
 		}
 		return "No show";
 	}
 
-
-	public String printbooking(final String moviename, final String showbooked, final String usercontact ) {
-		for (int i = 0; i < byshow.length; i++) {
-			if (byshow[i].contains(moviename) && byshow[i].contains(usercontact)) {
+    /**
+     * { function_description }.
+     *
+     * @param      moviename    The moviename
+     * @param      showbooked   The showbooked
+     * @param      usercontact  The usercontact
+     *
+     * @return     { description_of_the_return_value }
+     */
+	public String printbooking(final String moviename,
+	 final String showbooked, final String usercontact ) {
+		for (int i = 0; i < size; i++) {
+			if (byshow[i].contains(moviename)
+			 && byshow[i].contains(usercontact)) {
 				return usercontact + " " + moviename + " " + showbooked;
 			}
 		}
-		return "No Booking";
+		return "Invalid";
 	}
 
+    /**
+     * { function_description }.
+     *
+     * @param      args  The arguments
+     */
 	public static void main(String[] args) {
 		Solution addmovieobj = new Solution();
 		// Solution bookobj = new Solution();
@@ -55,9 +88,11 @@ public class Solution {
 
 
 			String readinput = input.nextLine();
-			String[] bysinput = readinput.split(","); //to take case add/book
+			String[] bysinput = readinput.split(",");
+			 //to take case add/book
 			String[] bysmovie = bysinput[0].split(" ");
-			String[] bysinput2 = readinput.split(" "); // to operate booking and adding
+			String[] bysinput2 = readinput.split(" ");
+			 // to operate booking and adding
 
 			switch (bysmovie[0]) {
 
@@ -73,11 +108,11 @@ public class Solution {
 			case "book":
 				String moviename2 = bysmovie[1];
 				String userbooking;
-				String userseats = bysinput2[4].substring(24); // works for case1, because username is 6 chars
-				userbooking = moviename2 + "-" + bysinput[1] + "-" + bysinput[2] + "-" + bysinput[3] + "-" + userseats;
-				// moviename - TimeStamp - username - usercontact
-				// bookobj.add(userbooking);
-				// System.out.println(userbooking);
+				String userseats = bysinput2[4].substring(24);
+				 // works for case1, because username is 6 chars
+				userbooking = moviename2 + "-" + bysinput[1]
+				 + "-" + bysinput[2] + "-" + bysinput[3] + "-" + userseats;
+
 				addmovieobj.add(userbooking);
 				break;
 
@@ -85,7 +120,7 @@ public class Solution {
 				String moviename3 = bysmovie[1];
 				String showtime = bysinput[1];
 				System.out.println(
-					addmovieobj.getmovie(moviename3, showtime));
+				addmovieobj.getmovie(moviename3, showtime));
 				break;
 
 			case "print":
@@ -97,10 +132,6 @@ public class Solution {
 				System.out.println(addmovieobj.printbooking(moviename4,
 				 showbooked, usercontact));
 				break;
-
-			// case "show movies":
-			//     System.out.println(addmovieobj.showmovies());
-			//     break;
 
 			default:
 				break;
