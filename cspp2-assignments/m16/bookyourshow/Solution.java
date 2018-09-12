@@ -35,10 +35,34 @@ public class Solution {
      *
      * @param      addmovie  The addmovie
      */
-    public void add(final String addmovie) {
+    public void addmovie(final String addmovie) {
         byshow[size] = addmovie;
         size++;
     }
+
+    /**
+     * { function_description }.
+     *
+     * @param      addmovie      The addmovie
+     * @param      moviename2    The moviename 2
+     * @param      bookshowtime  The bookshowtime
+     */
+    public void addbooking(final String addmovie,
+     final String moviename2, final String bookshowtime) {
+            int bookingcount = 0;
+            for (int i = 0; i < size; i++) {
+                if (byshow[i].contains(moviename2)
+                    && byshow[i].contains(bookshowtime)) {
+                    byshow[size] = addmovie;
+                    size++;
+                    bookingcount++;
+                }
+            }
+            if (bookingcount == 0) {
+                System.out.println("No show");
+            }
+        }
+
 
     /**
      * { function_description }.
@@ -70,8 +94,8 @@ public class Solution {
     public String printbooking(final String moviename,
      final String showbooked, final String usercontact) {
         for (int i = 0; i < size; i++) {
-            if (byshow[i].contains(moviename)
-             && byshow[i].contains(usercontact)) {
+            if ((byshow[i].contains(moviename)
+             && byshow[i].contains(usercontact)) && byshow[i].contains(showbooked)) {
                 return usercontact + " " + moviename + " " + showbooked;
             }
         }
@@ -106,18 +130,21 @@ public class Solution {
                 String movie;
                 movie = moviename + "-" + bysinput[1] + "-" + bysseats;
                 // System.out.println(movie);
-                addmovieobj.add(movie);
+                addmovieobj.addmovie(movie);
                 break;
 
             case "book":
-                String moviename2 = bysmovie[1];
                 String userbooking;
+                String moviename2 = bysmovie[1];
+                String bookshowtime = bysinput[1];
+                String username = bysinput[2];
+                String bookusercontact = bysinput[a];
                 String userseats = bysinput2[b].substring(d);
                  // works for case1, because username is 6 chars
-                userbooking = moviename2 + "-" + bysinput[1]
-                 + "-" + bysinput[2] + "-" + bysinput[a] + "-" + userseats;
+                userbooking = moviename2 + "-" + bookshowtime
+                 + "-" + username + "-" + bookusercontact + "-" + userseats;
 
-                addmovieobj.add(userbooking);
+                addmovieobj.addbooking(userbooking, moviename2, bookshowtime);
                 break;
 
             case "get":
