@@ -32,7 +32,7 @@ public class Solution{
 			// System.out.println(byshow[i]);
 			// System.out.println(moviename);
 			if(byshow[i].contains(moviename) && byshow[i].contains(showtime)) {
-				return byshow[i];
+				return moviename + "," + showtime ;
 			}
 		}
 		return "No show";
@@ -58,12 +58,12 @@ public class Solution{
 			String readinput = input.nextLine();
 			String[] bysinput = readinput.split(","); //to take case add/book
 			String[] bysmovie = bysinput[0].split(" ");
-			String moviename = bysmovie[1];
 			String[] bysinput2 = readinput.split(" "); // to operate booking and adding
 
 			switch (bysmovie[0]) {
 
 	     		case "add":
+					String moviename = bysmovie[1];
 					String bysseats = bysinput2[4].substring(6);
 					String movie;
 					movie = moviename+"-"+bysinput[1]+"-"+bysseats;
@@ -72,26 +72,29 @@ public class Solution{
 					break;
 
 				case "book":
+					String moviename2 = bysmovie[1];
 				    String userbooking;
 				    String userseats = bysinput2[4].substring(24); // works for case1, because username is 6 chars
-				    userbooking = moviename+"-"+bysinput[1]+"-"+bysinput[2]+"-"+bysinput[3]+"-"+userseats;
+				    userbooking = moviename2+"-"+bysinput[1]+"-"+bysinput[2]+"-"+bysinput[3]+"-"+userseats;
                     // moviename - TimeStamp - username - usercontact
 
                      // bookobj.add(userbooking);
-                    System.out.println(userbooking);
+                    // System.out.println(userbooking);
                     addmovieobj.add(userbooking);
                     break;
 
                 case "get":
+                	String moviename3 = bysmovie[1];
                 	String showtime = bysinput[1];
-                    System.out.println(addmovieobj.getmovie(moviename, showtime));
+                    System.out.println(addmovieobj.getmovie(moviename3, showtime));
                     break;
 
                 case "print":
+                	String moviename4 = bysmovie[1];
                     String showbooked = bysinput[1];
                     String usercontact = bysinput[2];
                     // System.out.println(moviename + "-" + showtime + "-" + usercontact);
-                    System.out.println(addmovieobj.printbooking(moviename, showbooked, usercontact));
+                    System.out.println(addmovieobj.printbooking(moviename4, showbooked, usercontact));
                     break;
 
                 // case "show movies":
