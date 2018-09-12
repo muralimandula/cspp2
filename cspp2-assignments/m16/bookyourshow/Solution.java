@@ -52,19 +52,19 @@ public class Solution {
                      final String moviename2, final String bookshowtime,
                                                    final String userseats) {
             int bookingcount = 0;
-            String[] seats = userseats.substring
-                            (1, userseats.length() - 1).split(",");
+            String[] seats = userseats.substring(1,
+                userseats.length() - 1).split(",");
             for (int i = 0; i < size; i++) {
                 if (byshow[i].contains(moviename2)
                  && byshow[i].contains(bookshowtime)) {
                     byshow[size] = addmovie;
                     size++;
                     bookingcount++;
-                    for(int j =0; j < seats.length ; j++) {
+                    for (int j = 0; j < seats.length; j++) {
                         int index = byshow[i].indexOf(seats[j]);
 
-                    byshow[i] = byshow[i].replace(seats[j] + "," , "N/A,");
-                    byshow[i] = byshow[i].replace(seats[j] + "]" , "N/A]");
+                    byshow[i] = byshow[i].replace(seats[j] + ",", "N/A,");
+                    byshow[i] = byshow[i].replace(seats[j] + "]", "N/A]");
 
                     }
                     break;
