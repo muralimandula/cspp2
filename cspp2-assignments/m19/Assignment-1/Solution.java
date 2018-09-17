@@ -259,7 +259,7 @@ public final class Solution {
                 try{
                 	loadQuestions(s, q, Integer.parseInt(tokens[1]));
                 } catch(LoadingQuestionException e) {
-                	System.out.println(e);
+                	System.out.println(e.getMessage());
                 }
                 break;
 
