@@ -145,7 +145,7 @@ class QuizTime {
     /**
      * { var_description }.
      */
-    public static ArrayList<Quiz> quizquestions;
+    private static ArrayList<Quiz> quizquestions;
 
     /**
      * Constructs the object.
@@ -164,7 +164,11 @@ class QuizTime {
         quizquestions.add(quizpassedtoadd);
     }
 
-
+    /**
+     * Gets the questions.
+     *
+     * @return     The questions.
+     */
     public ArrayList<Quiz> getQuestions() {
         return quizquestions;
     }
