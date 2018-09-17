@@ -2,6 +2,24 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
 
+
+
+
+/**
+ * Exception for signaling loading question errors.
+ */
+class LoadingQuestionException extends Exception {
+    /**
+     * Constructs the object.
+     *
+     * @param      s     { parameter_description }
+     */
+    LoadingQuestionException(final String s) {
+        super(s);
+    }
+}
+
+
 /**
  * Solution class for code-eval.
  */
@@ -238,7 +256,11 @@ public final class Solution {
                 System.out.println("|----------------|");
                 System.out.println("| Load Questions |");
                 System.out.println("|----------------|");
-                loadQuestions(s, q, Integer.parseInt(tokens[1]));
+                try{
+                	loadQuestions(s, q, Integer.parseInt(tokens[1]));
+                } catch(LoadingQuestionException e) {
+                	System.out.println(e);
+                }
                 break;
 
 
@@ -272,7 +294,8 @@ public final class Solution {
      * @param      questionCount  The question count
      */
     public static void loadQuestions(final Scanner s,
-                        final QuizTime q, final int questionCount) {
+                        final QuizTime q, final int questionCount)
+                        				 throws LoadingQuestionException {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
@@ -284,27 +307,22 @@ public final class Solution {
                 String[] questionInfo = s.nextLine().split(":");
 
                 if (questionInfo.length != FIVE || questionInfo[0].equals("")) {
-                    System.out.println("Error! Malformed question");
-                    break;
+                    throw new LoadingQuestionException("Error! Malformed question");
 
                 } else  if (questionInfo[1].split(",").length < 2) {
-                    System.out.println(questionInfo[0]
+                    throw new LoadingQuestionException(questionInfo[0]
                      + " does not have enough answer choices");
 
-                    break;
                 } else if (Integer.parseInt(questionInfo[2]) > FOUR) {
-                    System.out.println("Error! Correct answer"
+                    throw new LoadingQuestionException("Error! Correct answer"
                      + " choice number is out of range for question text 1");
-                    break;
                 } else if (Integer.parseInt(questionInfo[THREE]) < 1) {
-                    System.out.println("Invalid max marks for "
+                    throw new LoadingQuestionException("Invalid max marks for "
                                                  + questionInfo[0]);
-                    break;
 
                 } else if (Integer.parseInt(questionInfo[FOUR]) > 0) {
-                    System.out.println("Invalid penalty for "
+                    throw new LoadingQuestionException("Invalid penalty for "
                                                      + questionInfo[0]);
-                    break;
 
                 } else {
                     // try {
