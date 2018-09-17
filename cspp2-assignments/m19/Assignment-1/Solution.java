@@ -5,12 +5,26 @@ import java.util.ArrayList;
 /**
  * Solution class for code-eval.
  */
-
 class Quiz {
 
+    /**
+     * Questioin in String format.
+     */
 	private String question;
+
+	/**
+	 * Choices as String array.
+	 */
 	private String[] choices;
+
+	/**
+	 * Correct answer for question as int, 1st, 2nd, 3rd or 4th.
+	 */
 	private int correctanswer;
+
+	/**
+	 * maximum marks allotted for that question.
+	 */
 	private int maxmarks;
 	private int penalty;
 	private String userScoreAwarded;
@@ -19,75 +33,138 @@ class Quiz {
 	Quiz() {
 
 	}
-
-    Quiz(String question, String[] choices,
-     int correctanswer, int maxmarks, int penalty) {
-     	this.question = question;
-     	this.choices = choices;
-     	this.correctanswer = correctanswer;
-     	this.maxmarks = maxmarks;
-     	this.penalty = penalty;
-     	// this.userScoreAwarded = userScoreAwarded;
-
+    /**
+     * Constructs the object.
+     *
+     * @param      question       The question
+     * @param      choices        The choices
+     * @param      correctanswer  The correctanswer
+     * @param      maxmarks       The maxmarks
+     * @param      penalty        The penalty
+     */
+    Quiz(final String que,final  String[] choice,
+     final int correctans,final int maxmark,final int penlty) {
+     	this.question = que;
+     	this.choices = choice;
+     	this.correctanswer = correctans;
+     	this.maxmarks = maxmark;
+     	this.penalty = penlty;
     }
 
-
+    /**
+     * Gets the question.
+     *
+     * @return     The question.
+     */
     public String getQuestion() {
     	return this.question;
     }
 
+    /**
+     * Gets the choices.
+     *
+     * @return     The choices.
+     */
     public String[] getChoices() {
     	return this.choices;
     }
 
+    /**
+     * Gets the correctanswer.
+     *
+     * @return     The correctanswer.
+     */
     public int getCorrectanswer() {
     	return this.correctanswer;
     }
 
+    /**
+     * Gets the maxmarks.
+     *
+     * @return     The maxmarks.
+     */
     public int getMaxmarks() {
     	return this.maxmarks;
     }
 
+    /**
+     * Gets the penalty.
+     *
+     * @return     The penalty.
+     */
     public int getPenalty() {
     	return this.penalty;
     }
 
+    /**
+     * Sets the user score.
+     *
+     * @param      score  The score
+     */
     public void setUserScore(final String score) {
     	this.userScoreAwarded = score;
     }
 
+    /**
+     * Gets the user score.
+     *
+     * @return     The user score.
+     */
     public String getUserScore() {
     	return this.userScoreAwarded;
     }
 
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
-        return question + " " + Arrays.toString(choices) + " " + correctanswer + " " + maxmarks + " " + penalty;
+        return question + " " + Arrays.toString(choices)
+         + " " + correctanswer + " " + maxmarks + " " + penalty;
 
     }
 }
 
-
+/**
+ * Class for quiz time.
+ */
 class QuizTime {
 	public ArrayList<Quiz> quizquestions;
 
+    /**
+     * Constructs the object.
+     */
     QuizTime() {
     	quizquestions = new ArrayList<>();
 
     }
-    public void addQuestionInfo(Quiz quizpassed_to_add) {
+
+    /**
+     * Adds a question information.
+     *
+     * @param      quizpassed_to_add  The quizpassed to add
+     */
+    public void addQuestionInfo(final Quiz quizpassed_to_add) {
         quizquestions.add(quizpassed_to_add);
     }
 
 
 }
 
-
+/**
+ * Solution class.
+ */
 public final class Solution {
-     /**
-     * Constructs the object.
-     */
 
+    /**
+     * quize size, increamented for each question.
+     */
+    public static int quizsize = 0;
+
+    /**
+     * userScore, calculates penalty and score.
+     */
     public static int userScore = 0;
     Solution() {
         // leave this blank
@@ -146,26 +223,47 @@ public final class Solution {
      * Loads questions.
      *
      * @param      s              The scanner object for user input
-     * @param      quiz           The quiz object
+     * @param      q           The quiz object
      * @param      questionCount  The question count
      */
-    public static void loadQuestions(final Scanner s, QuizTime q, final int questionCount) {
+    public static void loadQuestions(final Scanner s,
+    							 QuizTime q, final int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        //
-        for (int i = 0; i < questionCount; i++) {
-        	String[] questionInfo = s.nextLine().split(":");
+        if ( questionCount == 0 ){
+        	System.out.println("Quiz does not have questions");
+        }else {
+	        for (int i = 0; i < questionCount; i++) {
+	        	String[] questionInfo = s.nextLine().split(":");
+	        	if(Integer.parseInt(questionInfo[3]) > 4) {
+	        		System.out.println("Error! Correct answer" +
+	        		 " choice number is out of range for question text 1");
+	        		break;
+		    	}else if(questionInfo[1].split(",").length < 4) {
+		    		System.out.println(questionInfo[0] +
+		    		 " does not have enough answer choices");
+		    	}else {
 
-            q.addQuestionInfo(new Quiz(questionInfo[0], questionInfo[1].split(","),
-        			 Integer.parseInt(questionInfo[2]),
-        			  Integer.parseInt(questionInfo[3]),
-        			   Integer.parseInt(questionInfo[4])));
 
-            }
-            System.out.println(questionCount + " are added to the quiz");
+		    	   	try {
+	            	q.addQuestionInfo(new Quiz(questionInfo[0],
+	            				 questionInfo[1].split(","),
+	        			 Integer.parseInt(questionInfo[2]),
+	        			  Integer.parseInt(questionInfo[3]),
+	        			   Integer.parseInt(questionInfo[4])));
+	         	    quizsize++;
+	       			} catch(IndexOutOfBoundsException e) {
+	       		 	System.out.println("Error! Malformed question");
+	       		 	break;
+	       		 }
+	      		}
+	      	}
+	        }
+	        System.out.println(questionCount + " are added to the quiz");
+	        }
 
-    }
+
 
 
 
@@ -176,35 +274,30 @@ public final class Solution {
      * @param      quiz         The quiz object
      * @param      answerCount  The answer count
      */
-    public static void startQuiz(final Scanner s, QuizTime quiz, final int answerCount) {
+    public static void startQuiz(final Scanner s,
+    					 QuizTime quiz, final int answerCount) {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
+	  for (Quiz que : quiz.quizquestions) {
 
-        // for (int j = 0; j < answerCount; j++) {
-        	for (Quiz que : quiz.quizquestions) {
-        		System.out.println(que.getQuestion() + "(" + que.getMaxmarks() + ")");
-
-
-        		System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1]
-        		 + "\t" + que.getChoices()[2] + "\t" + que.getChoices()[3] + "\n");
+       	System.out.println(que.getQuestion() + "(" + que.getMaxmarks() + ")");
+        System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1]
+        	+ "\t" + que.getChoices()[2] + "\t" + que.getChoices()[3] + "\n");
 
 
-        	    String userchoice = s.nextLine();
+        String userchoice = s.nextLine();
 
-        	    if (userchoice.equals(que.getChoices()[que.getCorrectanswer()-1])) {
-        	    	userScore += que.getMaxmarks();
-        	    	que.setUserScore(" Correct Answer! - Marks Awarded: " + que.getMaxmarks());
-
-        	    } else {
-        	    	userScore += que.getPenalty();
-        	    	que.setUserScore(" Wrong Answer! - Penalty: " + que.getPenalty());
+        if (userchoice.equals(que.getChoices()[que.getCorrectanswer()-1])) {
+        	userScore += que.getMaxmarks();
+        	que.setUserScore(" Correct Answer! - Marks Awarded: "
+        									    	 + que.getMaxmarks());
+        } else {
+           	userScore += que.getPenalty();
+   	    	que.setUserScore(" Wrong Answer! - Penalty: " + que.getPenalty());
 
         	    }
         	}
-
-
-        // }
     }
 
 
@@ -215,11 +308,13 @@ public final class Solution {
      */
     public static void displayScore(final QuizTime quiz) {
         // write your code here to display the score report
-        for (Quiz que : quiz.quizquestions) {
-        	System.out.println(que.getQuestion());
-        	System.out.println(que.getUserScore());
+        if(quizsize != 0) {
+	        for (Quiz que : quiz.quizquestions) {
+	        	System.out.println(que.getQuestion());
+	        	System.out.println(que.getUserScore());
+	        }
+        	System.out.println("Total Score: " + userScore);
         }
-        System.out.println("Total Score: " + userScore);
     }
 }
 
