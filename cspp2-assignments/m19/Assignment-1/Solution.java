@@ -190,9 +190,9 @@ public final class Solution {
         		 + "\t" + que.getChoices()[2] + "\t" + que.getChoices()[3] + "\n");
 
 
-        	    String[] userchoice = s.nextLine().split(" ");
-        	    int userchoicenum = Integer.parseInt(userchoice[1]);
-        	    if (userchoicenum == que.getCorrectanswer()) {
+        	    String userchoice = s.nextLine();
+
+        	    if (userchoice == que.getChoices()[que.getCorrectanswer()-1]) {
         	    	userScore += que.getMaxmarks();
         	    	que.setUserScore(" Correct Answer! - Marks Awarded: " + que.getMaxmarks());
 
