@@ -248,11 +248,14 @@ public final class Solution {
 		    		break;
 		    	}else if(Integer.parseInt(questionInfo[3]) < 1) {
 		    		System.out.println("Invalid max marks for " + questionInfo[0]);
+		    		break;
 
 		    	}else if(Integer.parseInt(questionInfo[4]) > 0) {
 		    		System.out.println("Invalid penalty for " + questionInfo[0]);
+		    		break;
 		    	}else if(questionInfo.length != 5) {
 	       		 	System.out.println("Error! Malformed question");
+	       		 	break;
 		    	}else {
 		    	   	try {
 	            	q.addQuestionInfo(new Quiz(questionInfo[0],
