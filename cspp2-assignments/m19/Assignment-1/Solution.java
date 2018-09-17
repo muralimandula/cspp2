@@ -246,6 +246,11 @@ public final class Solution {
 	        		System.out.println("Error! Correct answer" +
 	        		 " choice number is out of range for question text 1");
 		    		break;
+		    	}else if(Integer.parseInt(questionInfo[3]) < 1) {
+		    		System.out.println("Invalid max marks for " + questionInfo[0]);
+
+		    	}else if(Integer.parseInt(questionInfo[4]) > 0) {
+		    		System.out.println("Invalid penalty for " + questionInfo[0]);
 		    	}else {
 
 
