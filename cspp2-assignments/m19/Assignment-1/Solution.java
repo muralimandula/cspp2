@@ -170,7 +170,7 @@ class QuizTime {
 /**
  * Solution class.
  */
-public class Solution {
+public final class Solution {
 
     /**
      * quize size, increamented for each question.
@@ -180,17 +180,17 @@ public class Solution {
     /**
      * ELiminate magic number 5.
      */
-    final static int FIVE = 5;
+    static final int FIVE = 5;
 
     /**
      * ELiminate magic number 4.
      */
-    final static int FOUR = 4;
+    static final int FOUR = 4;
 
     /**
      * ELiminate magic number 3.
      */
-    final static int THREE = 3;
+    static final int THREE = 3;
 
 
 
@@ -202,7 +202,7 @@ public class Solution {
     /**
      * Constructs the object.
      */
-    Solution() {
+    private Solution() {
         // leave this blank
 
     }
