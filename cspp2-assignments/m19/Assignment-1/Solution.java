@@ -294,7 +294,7 @@ public final class Solution {
         System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1]
         	+ "\t" + que.getChoices()[2] + "\t" + que.getChoices()[3] + "\n");
     	} else if (que.getChoices().length == 2){
-    	    System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1]);
+    	    System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1] + "\n");
     	}
 
 
