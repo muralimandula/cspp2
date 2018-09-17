@@ -289,8 +289,13 @@ public final class Solution {
 	  for (Quiz que : quiz.quizquestions) {
 
        	System.out.println(que.getQuestion() + "(" + que.getMaxmarks() + ")");
-        System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1]
-        	+ "\t" + que.getChoices()[2] + "\t" + que.getChoices()[3] + "\n");
+
+       	for (int k = 0; k < que.getChoices().length - 1; k++) {
+       		 System.out.println(que.getChoices()[0] + "\t");
+       	}
+       	System.out.print(que.getChoices()[que.getChoices().length-1]);
+        // System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1]
+        // 	+ "\t" + que.getChoices()[2] + "\t" + que.getChoices()[3] + "\n");
 
 
         String userchoice = s.nextLine();
