@@ -237,7 +237,7 @@ public final class Solution {
         }else {
 	        for (int i = 0; i < questionCount; i++) {
 	        	String[] questionInfo = s.nextLine().split(":");
-	        	if(questionInfo[1].split(",").length < 4) {
+	        	if(questionInfo[1].split(",").length < 2) {
 		    		System.out.println(questionInfo[0] +
 		    		 " does not have enough answer choices");
 
