@@ -236,13 +236,14 @@ public final class Solution {
         	System.out.println("Quiz does not have questions");
         }else {
 	        for (int i = 0; i < questionCount; i++) {
+
 	        	String[] questionInfo = s.nextLine().split(":");
 
-		    	if(questionInfo.length != 5) {
+		    	if(questionInfo.length != 5 && questionInfo[0] != "") {
 	       		 	System.out.println("Error! Malformed question");
 	       		 	break;
 
-	        	}else if(questionInfo[1].split(",").length < 2) {
+	        	}else  if(questionInfo[1].split(",").length < 2) {
 		    		System.out.println(questionInfo[0] +
 		    		 " does not have enough answer choices");
 
