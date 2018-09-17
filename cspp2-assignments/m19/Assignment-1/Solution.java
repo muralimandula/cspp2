@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.ArrayList;
 
 /**
  * Solution class for code-eval.
@@ -13,6 +15,10 @@ class Quiz {
 	private int penalty;
 	private String userScoreAwarded;
 
+
+	Quiz() {
+
+	}
 
     Quiz(String question, String[] choices,
      int correctanswer, int maxmarks, int penalty) {
@@ -53,6 +59,27 @@ class Quiz {
     public String getUserScore() {
     	return this.userScoreAwarded;
     }
+
+
+    public String toString() {
+        return question + " " + Arrays.toString(choices) + " " + correctanswer + " " + maxmarks + " " + penalty;
+
+    }
+}
+
+
+class QuizTime {
+	public ArrayList<Quiz> quizquestions;
+
+    QuizTime() {
+    	quizquestions = new ArrayList<>();
+
+    }
+    public void addQuestionInfo(Quiz quizpassed_to_add) {
+        quizquestions.add(quizpassed_to_add);
+    }
+
+
 }
 
 
@@ -61,10 +88,12 @@ public final class Solution {
      * Constructs the object.
      */
 
-    private int userScore = 0;
-    private Solution() {
+    public static int userScore = 0;
+    Solution() {
         // leave this blank
+
     }
+
     /**
      * main function to execute test cases.
      *
@@ -72,7 +101,7 @@ public final class Solution {
      */
     public static void main(final String[] args) {
          // instantiate this Quiz
-        // Quiz q = new Quiz();
+        QuizTime q = new QuizTime();
          // code to read the test cases input file
         Scanner s = new Scanner(System.in);
         // check if there is one more line to process
@@ -87,25 +116,31 @@ public final class Solution {
                 System.out.println("|----------------|");
                 System.out.println("| Load Questions |");
                 System.out.println("|----------------|");
-                loadQuestions(s, Integer.parseInt(tokens[1]));
+                loadQuestions(s, q, Integer.parseInt(tokens[1]));
                 break;
+
+
                 case "START_QUIZ":
                 System.out.println("|------------|");
                 System.out.println("| Start Quiz |");
                 System.out.println("|------------|");
-                startQuiz(s, Integer.parseInt(tokens[1]));
+                startQuiz(s, q, Integer.parseInt(tokens[1]));
                 break;
+
+
                 case "SCORE_REPORT":
                 System.out.println("|--------------|");
                 System.out.println("| Score Report |");
                 System.out.println("|--------------|");
-                displayScore();
+                displayScore(q);
                 break;
                 default:
                 break;
             }
         }
     }
+
+
 
     /**
      * Loads questions.
@@ -114,20 +149,25 @@ public final class Solution {
      * @param      quiz           The quiz object
      * @param      questionCount  The question count
      */
-    public static void loadQuestions(final Scanner s, final int questionCount) {
+    public static void loadQuestions(final Scanner s, QuizTime q, final int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
         //
         for (int i = 0; i < questionCount; i++) {
         	String[] questionInfo = s.nextLine().split(":");
-        	Quiz quiz = new Quiz(questionInfo[0], questionInfo[1].split(","),
+
+            q.addQuestionInfo(new Quiz(questionInfo[0], questionInfo[1].split(","),
         			 Integer.parseInt(questionInfo[2]),
         			  Integer.parseInt(questionInfo[3]),
-        			   Integer.parseInt(questionInfo[4]));
+        			   Integer.parseInt(questionInfo[4])));
+
             }
-            System.out.println(questionCount + "are added to the quiz");
+            System.out.println(questionCount + " are added to the quiz");
+
     }
+
+
 
     /**
      * Starts a quiz.
@@ -136,44 +176,50 @@ public final class Solution {
      * @param      quiz         The quiz object
      * @param      answerCount  The answer count
      */
-    public static void startQuiz(final Scanner s, final int answerCount) {
+    public static void startQuiz(final Scanner s, QuizTime quiz, final int answerCount) {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
 
-        for (int j = 0; j < answerCount; j++) {
-        	for (Quiz que : quiz) {
+        // for (int j = 0; j < answerCount; j++) {
+        	for (Quiz que : quiz.quizquestions) {
         		System.out.println(que.getQuestion() + "(" + que.getMaxmarks() + ")");
-        		System.out.println(que.getChoices().toString());
+
+
+        		System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1]
+        		 + "\t" + que.getChoices()[2] + "\t" + que.getChoices()[3] + "\n");
+
+
         	    String[] userchoice = s.nextLine().split(" ");
         	    int userchoicenum = Integer.parseInt(userchoice[1]);
         	    if (userchoicenum == que.getCorrectanswer()) {
         	    	userScore += que.getMaxmarks();
-        	    	que.setUserScore(" Correct Answer! - Marks Awarded:" + que.getMaxmarks());
+        	    	que.setUserScore(" Correct Answer! - Marks Awarded: " + que.getMaxmarks());
 
         	    } else {
         	    	userScore += que.getPenalty();
-        	    	que.setUserScore(" Wrong Answer! - Penalty:" + que.getPenalty());
+        	    	que.setUserScore(" Wrong Answer! - Penalty: " + que.getPenalty());
 
         	    }
         	}
 
 
-        }
+        // }
     }
+
 
     /**
      * Displays the score report
      *
      * @param      quiz     The quiz object
      */
-    public static void displayScore() {
+    public static void displayScore(final QuizTime quiz) {
         // write your code here to display the score report
-        for (Quiz que : quiz) {
+        for (Quiz que : quiz.quizquestions) {
         	System.out.println(que.getQuestion());
         	System.out.println(que.getUserScore());
         }
-        System.out.println("Total Score:" + userScore);
+        System.out.println("Total Score: " + userScore);
     }
-
 }
+
