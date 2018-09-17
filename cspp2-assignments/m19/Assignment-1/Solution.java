@@ -192,7 +192,7 @@ public final class Solution {
 
         	    String userchoice = s.nextLine();
 
-        	    if (userchoice == que.getChoices()[que.getCorrectanswer()-1]) {
+        	    if (userchoice.equals(que.getChoices()[que.getCorrectanswer()-1])) {
         	    	userScore += que.getMaxmarks();
         	    	que.setUserScore(" Correct Answer! - Marks Awarded: " + que.getMaxmarks());
 
