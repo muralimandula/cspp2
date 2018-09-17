@@ -180,17 +180,17 @@ public class Solution {
     /**
      * ELiminate magic number 5.
      */
-    final static int five = 5;
+    final static int FIVE = 5;
 
     /**
      * ELiminate magic number 4.
      */
-    final static int four = 4;
+    final static int FOUR = 4;
 
     /**
      * ELiminate magic number 3.
      */
-    final static int three = 3;
+    final static int THREE = 3;
 
 
 
@@ -274,7 +274,7 @@ public class Solution {
 
                 String[] questionInfo = s.nextLine().split(":");
 
-                if (questionInfo.length != five || questionInfo[0].equals("")) {
+                if (questionInfo.length != FIVE || questionInfo[0].equals("")) {
                     System.out.println("Error! Malformed question");
                     break;
 
@@ -283,16 +283,16 @@ public class Solution {
                      + " does not have enough answer choices");
 
                     break;
-                } else if (Integer.parseInt(questionInfo[2]) > four) {
+                } else if (Integer.parseInt(questionInfo[2]) > FOUR) {
                     System.out.println("Error! Correct answer"
                      + " choice number is out of range for question text 1");
                     break;
-                } else if (Integer.parseInt(questionInfo[three]) < 1) {
+                } else if (Integer.parseInt(questionInfo[THREE]) < 1) {
                     System.out.println("Invalid max marks for "
                                                  + questionInfo[0]);
                     break;
 
-                } else if (Integer.parseInt(questionInfo[four]) > 0) {
+                } else if (Integer.parseInt(questionInfo[FOUR]) > 0) {
                     System.out.println("Invalid penalty for "
                                                      + questionInfo[0]);
                     break;
@@ -302,8 +302,8 @@ public class Solution {
                     q.addQuestionInfo(new Quiz(questionInfo[0],
                                  questionInfo[1].split(","),
                          Integer.parseInt(questionInfo[2]),
-                          Integer.parseInt(questionInfo[three]),
-                           Integer.parseInt(questionInfo[four])));
+                          Integer.parseInt(questionInfo[THREE]),
+                           Integer.parseInt(questionInfo[FOUR])));
                     quizsize++;
                     // } catch (IndexOutOfBoundsException e) {
                     // System.out.println("Error! Malformed question");
@@ -339,9 +339,9 @@ public class Solution {
 
         System.out.println(que.getQuestion() + "(" + que.getMaxmarks() + ")");
 
-        if (que.getChoices().length == four) {
+        if (que.getChoices().length == FOUR) {
         System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1]
-        + "\t" + que.getChoices()[2] + "\t" + que.getChoices()[three] + "\n");
+        + "\t" + que.getChoices()[2] + "\t" + que.getChoices()[THREE] + "\n");
         } else if (que.getChoices().length == 2) {
             System.out.println(que.getChoices()[0]
                              + "\t" + que.getChoices()[1] + "\n");
