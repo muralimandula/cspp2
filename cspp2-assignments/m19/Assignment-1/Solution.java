@@ -33,14 +33,15 @@ class Quiz {
 	Quiz() {
 
 	}
+
     /**
      * Constructs the object.
      *
-     * @param      question       The question
-     * @param      choices        The choices
-     * @param      correctanswer  The correctanswer
-     * @param      maxmarks       The maxmarks
-     * @param      penalty        The penalty
+     * @param      que         The que
+     * @param      choice      The choice
+     * @param      correctans  The correctans
+     * @param      maxmark     The maxmark
+     * @param      penlty      The penlty
      */
     Quiz(final String que,final  String[] choice,
      final int correctans,final int maxmark,final int penlty) {
@@ -243,6 +244,7 @@ public final class Solution {
 		    	}else if(questionInfo[1].split(",").length < 4) {
 		    		System.out.println(questionInfo[0] +
 		    		 " does not have enough answer choices");
+		    		break;
 		    	}else {
 
 
@@ -253,15 +255,17 @@ public final class Solution {
 	        			  Integer.parseInt(questionInfo[3]),
 	        			   Integer.parseInt(questionInfo[4])));
 	         	    quizsize++;
-	       			} catch(IndexOutOfBoundsException e) {
+	       			} catch (IndexOutOfBoundsException e) {
 	       		 	System.out.println("Error! Malformed question");
 	       		 	break;
 	       		 }
 	      		}
 	      	}
 	        }
+	        if (quizsize != 0) {
 	        System.out.println(questionCount + " are added to the quiz");
 	        }
+	    }
 
 
 
@@ -275,10 +279,12 @@ public final class Solution {
      * @param      answerCount  The answer count
      */
     public static void startQuiz(final Scanner s,
-    					 QuizTime quiz, final int answerCount) {
+    					 final QuizTime quiz, final int answerCount) {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
+
+
 	  for (Quiz que : quiz.quizquestions) {
 
        	System.out.println(que.getQuestion() + "(" + que.getMaxmarks() + ")");
@@ -288,7 +294,7 @@ public final class Solution {
 
         String userchoice = s.nextLine();
 
-        if (userchoice.equals(que.getChoices()[que.getCorrectanswer()-1])) {
+        if (userchoice.equals(que.getChoices()[que.getCorrectanswer() - 1])) {
         	userScore += que.getMaxmarks();
         	que.setUserScore(" Correct Answer! - Marks Awarded: "
         									    	 + que.getMaxmarks());
@@ -300,15 +306,14 @@ public final class Solution {
         	}
     }
 
-
     /**
-     * Displays the score report
+     * Displays the score report.
      *
      * @param      quiz     The quiz object
      */
     public static void displayScore(final QuizTime quiz) {
         // write your code here to display the score report
-        if(quizsize != 0) {
+        if (quizsize != 0) {
 	        for (Quiz que : quiz.quizquestions) {
 	        	System.out.println(que.getQuestion());
 	        	System.out.println(que.getUserScore());
