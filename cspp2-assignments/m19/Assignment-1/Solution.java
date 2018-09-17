@@ -239,7 +239,7 @@ public final class Solution {
 
 	        	String[] questionInfo = s.nextLine().split(":");
 
-		    	if(questionInfo.length != 5 || questionInfo[0] != "") {
+		    	if(questionInfo.length != 5 || questionInfo[0] == "") {
 	       		 	System.out.println("Error! Malformed question");
 	       		 	break;
 
