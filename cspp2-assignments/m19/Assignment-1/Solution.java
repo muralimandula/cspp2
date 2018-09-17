@@ -251,9 +251,9 @@ public final class Solution {
 
 		    	}else if(Integer.parseInt(questionInfo[4]) > 0) {
 		    		System.out.println("Invalid penalty for " + questionInfo[0]);
+		    	}else if(questionInfo.length != 5) {
+	       		 	System.out.println("Error! Malformed question");
 		    	}else {
-
-
 		    	   	try {
 	            	q.addQuestionInfo(new Quiz(questionInfo[0],
 	            				 questionInfo[1].split(","),
