@@ -257,9 +257,9 @@ public final class Solution {
                 System.out.println("| Load Questions |");
                 System.out.println("|----------------|");
                 try {
-                	loadQuestions(s, q, Integer.parseInt(tokens[1]));
+                    loadQuestions(s, q, Integer.parseInt(tokens[1]));
                 } catch (LoadingQuestionException e) {
-                	System.out.println(e.getMessage());
+                    System.out.println(e.getMessage());
                 }
                 break;
 
@@ -297,7 +297,7 @@ public final class Solution {
      */
     public static void loadQuestions(final Scanner s,
                         final QuizTime q, final int questionCount)
-                       				 throws LoadingQuestionException {
+                                     throws LoadingQuestionException {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
@@ -407,5 +407,6 @@ public final class Solution {
         }
     }
 }
+
 
 
