@@ -37,7 +37,9 @@ class Quiz {
      */
     private String userScoreAwarded;
 
-
+    /**
+     * Constructs the object.
+     */
     Quiz() {
 
     }
@@ -139,6 +141,10 @@ class Quiz {
  * Class for quiz time.
  */
 class QuizTime {
+
+    /**
+     * { var_description }.
+     */
     public ArrayList<Quiz> quizquestions;
 
     /**
@@ -164,7 +170,7 @@ class QuizTime {
 /**
  * Solution class.
  */
-public final class Solution {
+public class Solution {
 
     /**
      * quize size, increamented for each question.
@@ -174,17 +180,17 @@ public final class Solution {
     /**
      * ELiminate magic number 5.
      */
-    private static int five = 5;
+    final static int five = 5;
 
     /**
      * ELiminate magic number 4.
      */
-    private static int four = 4;
+    final static int four = 4;
 
     /**
      * ELiminate magic number 3.
      */
-    private static int three = 3;
+    final static int three = 3;
 
 
 
@@ -192,6 +198,10 @@ public final class Solution {
      * userScore, calculates penalty and score.
      */
     private static int userScore = 0;
+
+    /**
+     * Constructs the object.
+     */
     Solution() {
         // leave this blank
 
@@ -257,7 +267,7 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        if ( questionCount == 0 ) {
+        if (questionCount == 0) {
             System.out.println("Quiz does not have questions");
         } else {
             for (int i = 0; i < questionCount; i++) {
