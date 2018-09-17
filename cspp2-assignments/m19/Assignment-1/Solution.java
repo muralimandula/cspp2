@@ -237,7 +237,12 @@ public final class Solution {
         }else {
 	        for (int i = 0; i < questionCount; i++) {
 	        	String[] questionInfo = s.nextLine().split(":");
-	        	if(questionInfo[1].split(",").length < 2) {
+
+		    	if(questionInfo.length != 5) {
+	       		 	System.out.println("Error! Malformed question");
+	       		 	break;
+
+	        	}else if(questionInfo[1].split(",").length < 2) {
 		    		System.out.println(questionInfo[0] +
 		    		 " does not have enough answer choices");
 
@@ -249,9 +254,7 @@ public final class Solution {
 		    	}else if(Integer.parseInt(questionInfo[3]) < 1) {
 		    		System.out.println("Invalid max marks for " + questionInfo[0]);
 		    		break;
-		    	}else if(questionInfo.length != 5) {
-	       		 	System.out.println("Error! Malformed question");
-	       		 	break;
+
 		    	}else if(Integer.parseInt(questionInfo[4]) > 0) {
 		    		System.out.println("Invalid penalty for " + questionInfo[0]);
 		    		break;
