@@ -237,7 +237,7 @@ public final class Solution {
         }else {
 	        for (int i = 0; i < questionCount; i++) {
 	        	String[] questionInfo = s.nextLine().split(":");
-	        	if(Integer.parseInt(questionInfo[3]) > 4) {
+	        	if(Integer.parseInt(questionInfo[2]) > 4) {
 	        		System.out.println("Error! Correct answer" +
 	        		 " choice number is out of range for question text 1");
 	        		break;
