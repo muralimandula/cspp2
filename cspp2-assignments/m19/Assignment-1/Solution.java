@@ -145,7 +145,7 @@ class QuizTime {
     /**
      * { var_description }.
      */
-    public ArrayList<Quiz> quizquestions;
+    public static ArrayList<Quiz> quizquestions;
 
     /**
      * Constructs the object.
@@ -162,6 +162,11 @@ class QuizTime {
      */
     public void addQuestionInfo(final Quiz quizpassedtoadd) {
         quizquestions.add(quizpassedtoadd);
+    }
+
+
+    public ArrayList<Quiz> getQuestions() {
+        return quizquestions;
     }
 
 
@@ -335,7 +340,7 @@ public final class Solution {
         // store the user respones in the quiz object
 
 
-      for (Quiz que : quiz.quizquestions) {
+      for (Quiz que : quiz.getQuestions()) {
 
         System.out.println(que.getQuestion() + "(" + que.getMaxmarks() + ")");
 
@@ -370,7 +375,7 @@ public final class Solution {
     public static void displayScore(final QuizTime quiz) {
         // write your code here to display the score report
         if (quizsize != 0) {
-            for (Quiz que : quiz.quizquestions) {
+            for (Quiz que : quiz.getQuestions()) {
                 System.out.println(que.getQuestion());
                 System.out.println(que.getUserScore());
             }
