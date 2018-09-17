@@ -256,9 +256,9 @@ public final class Solution {
                 System.out.println("|----------------|");
                 System.out.println("| Load Questions |");
                 System.out.println("|----------------|");
-                try{
+                try {
                 	loadQuestions(s, q, Integer.parseInt(tokens[1]));
-                } catch(LoadingQuestionException e) {
+                } catch (LoadingQuestionException e) {
                 	System.out.println(e.getMessage());
                 }
                 break;
@@ -289,13 +289,15 @@ public final class Solution {
     /**
      * Loads questions.
      *
-     * @param      s              The scanner object for user input
-     * @param      q           The quiz object
-     * @param      questionCount  The question count
+     * @param      s                         { parameter_description }
+     * @param      q                         The quarter
+     * @param      questionCount             The question count
+     *
+     * @throws     LoadingQuestionException  { exception_description }
      */
     public static void loadQuestions(final Scanner s,
                         final QuizTime q, final int questionCount)
-                        				 throws LoadingQuestionException {
+                       				 throws LoadingQuestionException {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
@@ -304,10 +306,10 @@ public final class Solution {
         } else {
             for (int i = 0; i < questionCount; i++) {
 
-                String[] questionInfo = s.nextLine().split(":");
+            String[] questionInfo = s.nextLine().split(":");
 
-                if (questionInfo.length != FIVE || questionInfo[0].equals("")) {
-                    throw new LoadingQuestionException("Error! Malformed question");
+            if (questionInfo.length != FIVE || questionInfo[0].equals("")) {
+            throw new LoadingQuestionException("Error! Malformed question");
 
                 } else  if (questionInfo[1].split(",").length < 2) {
                     throw new LoadingQuestionException(questionInfo[0]
