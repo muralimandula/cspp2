@@ -26,7 +26,15 @@ class Quiz {
      * maximum marks allotted for that question.
      */
     private int maxmarks;
+
+    /**
+     * penalty for question.
+     */
     private int penalty;
+
+    /**
+     * useScore.
+     */
     private String userScoreAwarded;
 
 
@@ -43,8 +51,8 @@ class Quiz {
      * @param      maxmark     The maxmark
      * @param      penlty      The penlty
      */
-    Quiz(final String que,final  String[] choice,
-     final int correctans,final int maxmark,final int penlty) {
+    Quiz(final String que, final  String[] choice,
+     final int correctans, final int maxmark, final int penlty) {
         this.question = que;
         this.choices = choice;
         this.correctanswer = correctans;
@@ -256,25 +264,25 @@ public final class Solution {
 
                 String[] questionInfo = s.nextLine().split(":");
 
-                if(questionInfo.length != five || questionInfo[0].equals("")) {
+                if (questionInfo.length != five || questionInfo[0].equals("")) {
                     System.out.println("Error! Malformed question");
                     break;
 
-                } else  if(questionInfo[1].split(",").length < 2) {
-                    System.out.println(questionInfo[0] +
-                     " does not have enough answer choices");
+                } else  if (questionInfo[1].split(",").length < 2) {
+                    System.out.println(questionInfo[0]
+                     + " does not have enough answer choices");
 
                     break;
-                } else if(Integer.parseInt(questionInfo[2]) > four) {
-                    System.out.println("Error! Correct answer" +
-                     " choice number is out of range for question text 1");
+                } else if (Integer.parseInt(questionInfo[2]) > four) {
+                    System.out.println("Error! Correct answer"
+                     + " choice number is out of range for question text 1");
                     break;
-                } else if(Integer.parseInt(questionInfo[three]) < 1) {
-                    System.out.println("Invalid max marks for " +
-                                                         questionInfo[0]);
+                } else if (Integer.parseInt(questionInfo[three]) < 1) {
+                    System.out.println("Invalid max marks for "
+                                                 + questionInfo[0]);
                     break;
 
-                } else if(Integer.parseInt(questionInfo[four]) > 0) {
+                } else if (Integer.parseInt(questionInfo[four]) > 0) {
                     System.out.println("Invalid penalty for "
                                                      + questionInfo[0]);
                     break;
@@ -321,9 +329,9 @@ public final class Solution {
 
         System.out.println(que.getQuestion() + "(" + que.getMaxmarks() + ")");
 
-        if (que.getChoices().length == 4) {
+        if (que.getChoices().length == four) {
         System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1]
-        + "\t" + que.getChoices()[2] + "\t" + que.getChoices()[3] + "\n");
+        + "\t" + que.getChoices()[2] + "\t" + que.getChoices()[three] + "\n");
         } else if (que.getChoices().length == 2) {
             System.out.println(que.getChoices()[0]
                              + "\t" + que.getChoices()[1] + "\n");
