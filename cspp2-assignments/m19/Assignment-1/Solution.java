@@ -290,9 +290,12 @@ public final class Solution {
 
        	System.out.println(que.getQuestion() + "(" + que.getMaxmarks() + ")");
 
-
+        if(que.getChoices().length == 4) {
         System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1]
         	+ "\t" + que.getChoices()[2] + "\t" + que.getChoices()[3] + "\n");
+    	} else if (que.getChoices().length == 2){
+    	    System.out.println(que.getChoices()[0] + "\t" + que.getChoices()[1]);
+    	}
 
 
         String userchoice = s.nextLine();
