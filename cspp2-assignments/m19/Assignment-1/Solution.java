@@ -152,10 +152,10 @@ class QuizTime {
     /**
      * Adds a question information.
      *
-     * @param      quizpassed_to_add  The quizpassed to add
+     * @param      quizpassedtoadd  The quizpassed to add
      */
-    public void addQuestionInfo(final Quiz quizpassed_to_add) {
-        quizquestions.add(quizpassed_to_add);
+    public void addQuestionInfo(final Quiz quizpassedtoadd) {
+        quizquestions.add(quizpassedtoadd);
     }
 
 
@@ -169,29 +169,29 @@ public final class Solution {
     /**
      * quize size, increamented for each question.
      */
-    public static int quizsize = 0;
+    private static int quizsize = 0;
 
     /**
      * ELiminate magic number 5.
      */
-    public static int five = 5;
+    private static int five = 5;
 
     /**
      * ELiminate magic number 4.
      */
-    public static int four = 4;
+    private static int four = 4;
 
     /**
      * ELiminate magic number 3.
      */
-    public static int three = 3;
+    private static int three = 3;
 
 
 
     /**
      * userScore, calculates penalty and score.
      */
-    public static int userScore = 0;
+    private static int userScore = 0;
     Solution() {
         // leave this blank
 
@@ -253,13 +253,13 @@ public final class Solution {
      * @param      questionCount  The question count
      */
     public static void loadQuestions(final Scanner s,
-                                 QuizTime q, final int questionCount) {
+                        final QuizTime q, final int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        if ( questionCount == 0 ){
+        if ( questionCount == 0 ) {
             System.out.println("Quiz does not have questions");
-        }else {
+        } else {
             for (int i = 0; i < questionCount; i++) {
 
                 String[] questionInfo = s.nextLine().split(":");
