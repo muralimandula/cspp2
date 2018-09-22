@@ -169,7 +169,7 @@ public class TodoistMain {
                     testAddTask(todo, tokens);
                 break;
                 case "print-todoist":
-                    System.out.println(todo);
+                    System.out.println(todo.toString());
                 break;
                 case "get-next":
                     System.out.println(todo.getNextTask(tokens[1]));
