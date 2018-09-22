@@ -91,14 +91,21 @@ class Todoist {
 		todoarray.add(passedtask);
 	}
 
-	public String toString(Task t) {
-		// for(Task t : todoarray) { //Each Task
-			return t.getTitle() + " " + t.getAssigniedTo() +
-			 " " + t.getTimeToComplete() + " " + t.getImportant() +
-				 " " + t.getUrgent() + " " + t.getStatus();
-		// }
-	}
+	// public String toString(Task t) {
+	// 	// for(Task t : todoarray) { //Each Task
+	// 		return t.getTitle() + " " + t.getAssigniedTo() +
+	// 		 " " + t.getTimeToComplete() + " " + t.getImportant() +
+	// 			 " " + t.getUrgent() + " " + t.getStatus();
+	// 	// }
+	// }
 
+	public void printAll( ) {
+		for(Task t : todoarray) { //Each Task
+			System.out.println(t.getTitle() + " " + t.getAssigniedTo() +
+			 " " + t.getTimeToComplete() + " " + t.getImportant() +
+				 " " + t.getUrgent() + " " + t.getStatus());
+		}
+	}
 
 	public Task getNextTask(final String username) {
 		for (Task t : todoarray) {
@@ -169,7 +176,8 @@ public class TodoistMain {
                     testAddTask(todo, tokens);
                 break;
                 case "print-todoist":
-                    System.out.println(todo.toString());
+                    // System.out.println(todo);
+                	todo.printAll();
                 break;
                 case "get-next":
                     System.out.println(todo.getNextTask(tokens[1]));
