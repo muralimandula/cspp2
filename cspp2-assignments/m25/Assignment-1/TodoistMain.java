@@ -101,9 +101,9 @@ class Todoist {
 
 	public void printAll( ) {
 		for(Task t : todoarray) { //Each Task
-			System.out.println(t.getTitle() + " " + t.getAssigniedTo() +
-			 " " + t.getTimeToComplete() + " " + t.getImportant() +
-				 " " + t.getUrgent() + " " + t.getStatus());
+			System.out.println(t.getTitle() + ", " + t.getAssigniedTo() +
+			 ", " + t.getTimeToComplete() + ", " + t.getImportant() +
+				 ", " + t.getUrgent() + ", " + t.getStatus());
 		}
 	}
 
