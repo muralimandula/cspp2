@@ -71,6 +71,12 @@ class Task {
 		return this.status;
 	}
 
+	public String ToString() {
+		return this.getTitle() + ", " + this.getAssigniedTo() + ", " +
+		 this.getTimeToComplete() + ", " + this.getUrgent() + ", " +
+		  this.getStatus();
+	}
+
 }
 
 class Todoist {
