@@ -110,7 +110,7 @@ class Todoist {
 	public Task getNextTask(final String username) {
 		for (Task t : todoarray) {
 			if ((t.getAssigniedTo().equals(username)) && (t.getStatus().equals("todo"))) {
-				if(t.getImportant().equals("important")) { // && (t.getUrgent().equals("Not Urgent"))) {
+				if(t.getImportant().equals("Important")) { // && (t.getUrgent().equals("Not Urgent"))) {
 					return t;
 				}
 			}
