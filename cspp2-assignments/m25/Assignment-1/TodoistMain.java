@@ -71,10 +71,10 @@ class Task {
 		return this.status;
 	}
 
-	public String ToString() {
+	public String toString() {
 		return this.getTitle() + ", " + this.getAssigniedTo() + ", " +
-		 this.getTimeToComplete() + ", " + this.getUrgent() + ", " +
-		  this.getStatus();
+		 this.getTimeToComplete() + ", " + this.getImportant() + ", " +
+		  this.getUrgent() + ", " + this.getStatus();
 	}
 
 }
@@ -91,11 +91,11 @@ class Todoist {
 		todoarray.add(passedtask);
 	}
 
-	public void ToString(Task t) {
+	public String toString(Task t) {
 		// for(Task t : todoarray) { //Each Task
-			System.out.println(t.getTitle() + " " + t.getAssigniedTo() +
+			return t.getTitle() + " " + t.getAssigniedTo() +
 			 " " + t.getTimeToComplete() + " " + t.getImportant() +
-				 " " + t.getUrgent() + " " + t.getStatus());
+				 " " + t.getUrgent() + " " + t.getStatus();
 		// }
 	}
 
