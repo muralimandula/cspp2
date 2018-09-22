@@ -140,9 +140,10 @@ class Todoist {
 		int count = 0;
 
 		for(Task eachTask : todoarray) {
-			if (eachTask.getAssigniedTo().equals(username) && eachTask.getStatus().equals("todo")) {
 			String tempuser = eachTask.getAssigniedTo();
 			if (getNextTask(tempuser) != null && count < noOfTasks)  {
+			if (eachTask.getAssigniedTo().equals(username)) {
+
 				temptodo[count] = eachTask;
 				count++;
 				}
