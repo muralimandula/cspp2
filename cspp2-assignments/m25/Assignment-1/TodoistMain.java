@@ -115,24 +115,36 @@ class Todoist {
 					return t;
 				}
 			}
+
+			if ((t.getAssigniedTo().equals(username)) && (t.getStatus().equals("todo"))) {
+
+				if (t.getImportant().equals("Important") && (t.getUrgent().equals("Urgent"))) { // && (t.getUrgent().equals("Not Urgent"))) {
+					return t;
+				}
+			}
 		}
 		return null;
 	}
 
+	/**
+	 * Gets the next task.
+	 *
+	 * @param      username   The username
+	 * @param      noOfTasks  No of tasks
+	 *
+	 * @return     The next task.
+	 */
 	public Task[] getNextTask(final String username, final int noOfTasks) {
 
 		Task[] temptodo = new Task[noOfTasks];
-		 // ArrayList<Task> temptodo = new ArrayList<Task>();
-		 int taskCount = 0;
+		int count = 0;
 
-        while(taskCount < noOfTasks) {
-			for(Task eachTask : todoarray) {
-				String tempuser = eachTask.getAssigniedTo();
-				if (getNextTask(tempuser) != null) {
-				// temptodo.add(eachTask);
-				temptodo[taskCount] = eachTask;
-
-				taskCount++;
+		for(Task eachTask : todoarray) {
+			if (eachTask.getAssigniedTo().equals(username) && eachTask.getStatus().equals("todo")) {
+			String tempuser = eachTask.getAssigniedTo();
+			if (getNextTask(tempuser) != null && count < noOfTasks)  {
+				temptodo[count] = eachTask;
+				count++;
 				}
 			}
 		}
