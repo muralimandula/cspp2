@@ -115,7 +115,7 @@ class Plagiarism {
         }
         if (z[1] != 0) {
             System.out.println("Maximum similarity is between File"
- + Integer.toString(z[1]) + ".txt and File" + Integer.toString(z[2]) + ".txt");
+                               + Integer.toString(z[1]) + ".txt and File" + Integer.toString(z[2]) + ".txt");
         }
     }
 }
@@ -152,7 +152,8 @@ public final class Solution {
                 }
                 Pattern stringPattern = Pattern.compile("[^a-z A-Z 0-9]");
                 Matcher matcher = stringPattern.matcher(buffer);
-                String words = matcher.replaceAll("").replace(".", " ").toLowerCase();
+                String words = matcher.replaceAll("")
+                .replace(".", " ").toLowerCase();
                 fileasString.close();
                 readFile.close();
                 plagiarism.load(words);
