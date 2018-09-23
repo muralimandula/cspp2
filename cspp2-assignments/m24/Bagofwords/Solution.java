@@ -115,7 +115,8 @@ class Plagiarism {
         }
         if (z[1] != 0) {
             System.out.println("Maximum similarity is between File"
-                               + Integer.toString(z[1]) + ".txt and File" + Integer.toString(z[2]) + ".txt");
+                    + Integer.toString(z[1])
+                       + ".txt and File" + Integer.toString(z[2]) + ".txt");
         }
     }
 }
