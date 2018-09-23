@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.HashMap;
 import java.io.File;
 /**
  * Class for string match.
@@ -38,7 +37,8 @@ class StringMatch {
             for (int i = 0; i < string2.length(); i++) {
                 for (int j = i + 1; j <= string2.length(); j++) {
                     if (string1.contains(string2.substring(i, j))) {
-                        if (string2.substring(i, j).length() > stringMatch.length()) {
+                        if (string2.substring(i, j)
+                            .length() > stringMatch.length()) {
                             stringMatch = string2.substring(i, j);
                         }
                     }
@@ -48,7 +48,8 @@ class StringMatch {
                 result = Math.pow((2 * 2 * 2) + 2, 2);
                 System.out.format("%13.1f", result);
             } else {
-                double numerator = (stringMatch.length() * 2) * Math.pow(((2 * 2 * 2) + 2), 2);
+                double numerator = (stringMatch.length() * 2)
+                 * Math.pow(((2 * 2 * 2) + 2), 2);
                 double denominator = string1.length() + string2.length();
                 result = Math.round(numerator / denominator);
                 System.out.format("%13.1f", result);
